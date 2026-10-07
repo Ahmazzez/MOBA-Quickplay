@@ -1,0 +1,102 @@
+{
+  "source": "https://opengameart.org/content/pok",
+  "model": "Pok",
+  "creator": "Teh_Bucket",
+  "license": "CC0 1.0",
+  "mesh": "SK_StoneGolem.fbx",
+  "height_cm": 200,
+  "feet_origin": true,
+  "force_front_x_axis": true,
+  "import_uniform_scale": 1,
+  "fps": 30,
+  "clips": {
+    "Idle": {
+      "file": "AN_Golem_Idle.fbx",
+      "frames": [
+        0.0,
+        60.0
+      ],
+      "seconds": 2.0,
+      "authored_clip": "Mistworld prototype Idle"
+    },
+    "Walk": {
+      "file": "AN_Golem_Walk.fbx",
+      "frames": [
+        0.0,
+        30.0
+      ],
+      "seconds": 1.0,
+      "authored_clip": "Mistworld prototype Walk"
+    },
+    "Attack": {
+      "file": "AN_Golem_Attack.fbx",
+      "frames": [
+        0.0,
+        36.0
+      ],
+      "seconds": 1.2,
+      "authored_clip": "Mistworld prototype Attack"
+    },
+    "Death": {
+      "file": "AN_Golem_Death.fbx",
+      "frames": [
+        0.0,
+        30.0
+      ],
+      "seconds": 1.0,
+      "authored_clip": "Mistworld prototype Death"
+    }
+  },
+  "materials": [
+    {
+      "index": 0,
+      "name": "smooth stone",
+      "linear_color": [
+        0.65,
+        0.66,
+        0.68,
+        1.0
+      ],
+      "textures": {
+        "albedo": "textures/Rock_034_Base_Color.jpg",
+        "normal": "textures/Rock_034_Normal.jpg",
+        "ao": "textures/Rock_034_Ambient_Occlusion.jpg"
+      },
+      "uv_scale": 1.0
+    },
+    {
+      "index": 1,
+      "name": "carved stone",
+      "linear_color": [
+        0.65,
+        0.66,
+        0.68,
+        1.0
+      ],
+      "textures": {
+        "normal": "textures/carved_stone_norm.png",
+        "ao": "textures/carved_stone_amb.png"
+      },
+      "uv_scale": 1.0
+    },
+    {
+      "index": 2,
+      "name": "poky stone",
+      "linear_color": [
+        0.65,
+        0.66,
+        0.68,
+        1.0
+      ],
+      "textures": {
+        "albedo": "textures/Rough_Rock_023_COLOR.jpg",
+        "normal": "textures/Rough_Rock_023_NORM.jpg",
+        "ao": "textures/Rough_Rock_023_OCC.jpg"
+      },
+      "uv_scale": 1.0
+    }
+  ],
+  "bone_count": 27,
+  "triangles": 9680,
+  "textures_license": "CC0 textures by Joao Paulo via 3dtextures.me; carvings by Teh_Bucket"
+}

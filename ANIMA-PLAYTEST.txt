@@ -1,0 +1,52 @@
+MISTWORLD - ANIMA & CHARACTER SWITCHING
+
+Start at a safe crypt checkpoint. Press L, then choose Anima.
+Use Unlock Flamestealer / test access to enable her alternate skills.
+Choose each original or ascension Q/W/E/R independently, then close L.
+I opens the selected hero's equipment and model preview.
+
+Q/W/E/R: hold to preview, release to commit. Aiming allows movement.
+F: Flash (60 seconds). Space: auto-attack closest enemy in reach;
+hovering a different enemy overrides that target selection.
+B: replay the boss at either safe checkpoint. Y: development reset.
+T: create a training target at the cursor. J: development self-damage.
+
+Anima original kit:
+Q Mark: rapier thrust, 4-second sole mark, heal from damage to marked target.
+W Duelist Steps: three separately aimed dashes; one 5%-max-HP heal per dash
+that contacts an eligible enemy. Finish the three casts or let recasts expire.
+E Riposte: 1-second stance, 70% damage reduction, counter first direct hit.
+Counter healing is 15%, or 30% against her mark (not 45%).
+R Anima Stealer: long dash stopping at first enemy, mark, silence and heal theft.
+Boss silence/theft immunity is respected.
+Passive: time a rapier auto swing to parry a frontal enemy basic attack;
+blocks one attack and heals its would-be damage, at most once per 3 seconds.
+
+Flamestealer alternatives:
+Q Brand: applies a 4-second brand; autos apply independently timed burns.
+W Ember Steps: three dashes apply two burns each, healing from burn stacks
+already on the first non-minion enemy hit (up to 5% max HP per dash).
+E Flame Stance: parry one damage event, then 5 seconds of +20% auto damage
+and burn application. An auto on a branded target adds two burns total.
+R Inflamed Soul: 8-second nearby burn aura; heal from own burn damage
+to non-minions while active. Mark can also heal in a mixed loadout.
+
+Each hero keeps their own loadout, cooldowns, and health within the session.
+Hero/loadout changes are blocked during combat, active encounters, crowd
+control, recasts and ongoing combat effects. Inactive cooldowns keep ticking.
+Saved v1/v2 Alphonse progress is migrated without erasing earned gear.
+Alphonse's greatsword reward remains his; Anima uses her own rapier, dagger,
+and light-armor slots. Those equipment slots are empty in this prototype.
+Weapon models remain fixed placeholders regardless of equipment.
+
+Anime placeholder: Vita / VRoid AvatarSample_F by pixiv (CC0).
+Source and license: SourceArt/AnimaAnime/ASSET_CREDITS.txt.
+The rapier and dagger use palm-fitted closed grips through all eight clips.
+Editable model and textures: SourceArt/AnimaAnime/AnimaAnime.blend.
+Each weapon is weighted entirely to its matching hand; motions have no root travel.
+
+Validation: MistworldEditor Development build succeeded. All 43 Mistworld
+automation tests passed, including both Anima kits, mixed loadouts, character
+switching at both crypt checkpoints, save migration, and restart persistence.
+Imported skeletal mesh and ability poses were also checked in Unreal renders.
+

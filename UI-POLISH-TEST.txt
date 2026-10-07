@@ -1,0 +1,65 @@
+Mistworld - Alphonse UI polish
+
+Visual direction
+  Bright fantasy: ivory panels, blue accents, gold borders and ornaments.
+  The combat dock sits at the bottom of the viewport. It shows health, status,
+  Q/W/E/R, F for Flash, and Space for basic attacks. Each skill has a distinct
+  vector icon, key label and numerical cooldown over a filling overlay.
+  The objective and checkpoint interaction hint remain at the upper left.
+
+Inventory (I)
+  Select one of Alphonse's five equipment slots:
+    Greatsword Blade
+    Greatsword Guard
+    Heavy Helmet
+    Heavy Chestplate
+    Heavy Boots
+  The center shows the actual current character mesh and attached sword.
+  Use < and > to rotate the preview, or Reset view to restore its initial view.
+  The preview is cosmetic: rotating it does not turn or move the player.
+  It stops updating when the inventory closes and is cleaned up with the HUD.
+  When Alphonse's mannequin is replaced, the preview copies the replacement
+  mesh/materials and any attached static or skeletal equipment automatically.
+
+  Select Greatsword Blade to equip/unequip the earned Necrotic Greatsword.
+  This existing reward adds 5% ability damage, without changing basic attacks.
+  The other four slots are empty until their equipment is implemented.
+  They do not duplicate the blade's stats or invent additional loot.
+  Equipment changes still require a safe checkpoint, ten quiet seconds and
+  no unfinished encounter or active effects. The details panel explains locks.
+  Inventory and loadout are mutually exclusive. They do not pause enemies.
+
+Loadout (L)
+  The ascension/loadout screen uses matching ivory, blue and gold styling.
+  Existing independent Original/Abyss selections and switching rules remain.
+
+Saved progression
+  Legacy version-1 saves migrate to version 2 with the Blade slot name.
+  Completion, ownership, equipment, checkpoint, mixed loadout, cooldowns and
+  the stale-write revision are preserved. The filename intentionally stays
+  Saved/SaveGames/Mistworld.Crypt.v1.sav so existing progress is found.
+
+Play checks
+  1. Open Mistworld.uproject normally, then press Play in Lvl_CryptSlice.
+  2. Click the viewport for focus. Confirm health and skills are at the bottom.
+     Hold Q while moving; release and observe its numerical cooldown.
+  3. At the entrance, press I. Check all five slot names and the real model.
+     Rotate/reset it, select each empty slot, and close with I or Close I.
+  4. After earning the chest reward, select Blade and equip it at a safe
+     checkpoint. Stop/restart Play and confirm the saved equipment persists.
+  5. Press L and confirm the alternate-kit controls still work.
+  6. Resize the viewport; panels and their click regions should scale together.
+
+Art workflow
+  Read Mistworld-Art-Guide.txt in this project. Start with a 2 m floor tile or
+  a separate greatsword blade and guard before building the whole crypt or
+  a rigged hero. Export FBX, import into a separate Art folder, and compare
+  dimensions against the mannequin. The existing gameplay capsule, movement,
+  navigation and ability timings remain the reference during art integration.
+
+Verification files
+  Saved/Logs/UIPolishResults.json (latest result for each of the 26 checks)
+  Saved/Logs/UIPolishBuild.log
+  Saved/Logs/UIPolishTests.log
+  Saved/Automation/UIPolishFinal/index.json (full initial run)
+  Saved/Automation/UIPolishUIFinal/index.json (corrected UI rerun)

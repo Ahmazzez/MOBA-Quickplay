@@ -1,0 +1,132 @@
+Mistworld - Milestone 2: Alphonse / Abyss loadout test
+
+Start
+  Open E:\Unreal Projects\Mistworld\Mistworld.uproject normally in Unreal.
+  Use /Game/Mistworld/Maps/Lvl_CombatTest and press Play.
+  Click the viewport for keyboard focus. The original kit is initially equipped.
+  This remains a combat sandbox with placeholder mannequin, sword and effects.
+
+Checkpoint loadouts
+  L opens/closes the loadout panel. Click its buttons with the mouse.
+  The gold circle around the initial spawn is the checkpoint (2.5 m radius).
+  At the checkpoint, click Unlock Abyss (prototype test access).
+  Choose Original or Abyss independently for Q, W, E and R: 16 possible kits.
+  Close the panel to resume movement and combat. Opening it cancels aim and
+    movement orders; it does not pause the enemy or interrupt a committed cast.
+  Switching requires a living hero at the checkpoint and ten quiet seconds
+    after dealing or receiving external damage (including shield absorption).
+  Active aim, cast, dash, returning sword, R recast, trail, shockwave, crowd
+    control, guard, shield and warcry also block swapping. The panel explains
+    the current lock. A cooldown alone does not block a legal switch.
+  Swapping never changes a slot's cooldown deadline, including W during a
+    mixed-kit empowered R dash. This test unlock/loadout lasts for the current
+    Play session and survives normal death and Y reset in the combat sandbox.
+    Milestone 3 also saves this test unlock and loadout in Lvl_CryptSlice.
+    A dungeon-earned ascension unlock remains later scope.
+
+Controls retained from Milestone 1
+  Click/hold click: constant-speed navigation. Hold Q/W/E/R to preview;
+    release to cast. Aiming permits movement; committed windups stop movement.
+  Right click: cancel aim/attack/movement. Space: repeat nearest/hover-selected
+    basic attack. F: up-to-6 m Flash, 60 s cooldown. L: checkpoint menu.
+  T: place an Elite dummy at the cursor. J: 120 raw physical self-test damage.
+  Y: development reset of health, cooldowns, encounter and owned effects.
+    It deliberately bypasses combat locks, while retaining equipped abilities.
+  Normal defeat: checkpoint respawn after 4 s with 3 s spawn protection;
+    cooldown deadlines continue through death. Hostile commitments end spawn
+    protection. See MILESTONE-1-TEST.txt for the original kit and enemy rules.
+
+Abyss abilities (raw values, before resistance and damage reduction)
+  Q / Greatsword Quake
+    2.5 m, 90-degree cone; 150 physical damage; 0.35 s cast; 6 s cooldown.
+    Releases a piercing, terrain-blocked 8 m shockwave at 14 m/s, width 1.5 m,
+    dealing 80 magic damage. Direct cone targets cannot also take wave damage.
+    A direct Elite hit refunds 5 s of current R cooldown once per cast.
+    Shockwave-only hits do not refund R. Cone and wave have separate previews.
+  W / Abyss Dash
+    Up to 6 m along legal terrain at 15 m/s; 0.65 m swept radius; 80 physical
+    damage once per target; 0.10 s windup; 12 s cooldown. The speed preserves
+    the slower W requested during Milestone 1.
+    Leaves a 1.5 m wide trail. Each section lasts 4 s from placement, dealing
+    20 magic damage each second, first tick after one second. Overlapping
+    sections from one dash do not multiply ticks; no DOT remains after exit.
+    Ordinary W provides no ultimate healing.
+  E / Abyss Guard
+    33% damage reduction for 6 s; instant self-buff; 30 s cooldown.
+    Every full 100 actual HP lost while active refunds 1 s of current R
+    cooldown. Fractional HP loss accumulates during that guard and expires
+    with it. Shields, immunity and overkill do not increase the refund.
+  R / Abyss Warcry
+    0.40 s cast; 4 m self-centered circle; 260 magic damage; 120 s cooldown.
+    Capsule edges count, and walls block enemy hits. Grants +33% walking and
+    attack speed for 10 s: 665 cm/s walking, 0.752 s basic-attack cycle, 0.135 s
+    basic windup. Casts, dashes and Flash retain their fixed speeds/timings.
+    Warcry grants no returning sword, empowered W recast or ultimate healing.
+
+Mixed-kit original R
+  Original R still throws the returning sword. Its direction is fixed when
+    the aim key is released, as in the accepted Milestone 1 baseline.
+  Catching it opens a 2 s recast; the recast empowers the CURRENTLY EQUIPPED W.
+  Original W empowered: 8 m at 22 m/s; radius 1 m; 180 physical damage.
+  Abyss W empowered: 8 m at 22 m/s; radius 0.8 m; 140 physical damage;
+    2 m wide trail, each section 5 s, 30 magic damage per second.
+  Both have a 0.10 s windup and leave ordinary W cooldown untouched.
+  Original R's sword, empowered direct W and empowered Abyss trail heal
+    20% of actual HP damage dealt, capped by missing health and using the
+    shared healing modifiers. Trail healing continues after the recast window.
+  Released sword/shockwave/trail damage can finish after caster death. Death
+    permanently disables healing/recast benefits for that released effect,
+    even if the same pawn revives before its remaining hits/ticks finish.
+
+Shared values
+  Physical/magic damage uses armor/resistance, then multiplicative damage
+    reduction (75% cap), then shields, then remaining HP. Refunds/healing use
+    HP actually removed. Healing cannot revive a defeated actor.
+  Outgoing and incoming healing bonuses add within each category (50% cap),
+    then apply the strongest anti-heal (75% cap).
+  Ability haste uses base cooldown * 100 / (100 + haste), capped at 100 haste.
+    It is recorded when the cooldown starts; changing haste or a loadout does
+    not recalculate existing cooldowns. Durations, casts, trail ticks, recast
+    windows, auto attacks and Flash are not shortened by ability haste.
+  Sword color follows equipped Q. The purple aura follows equipped Abyss R.
+  Ability constants are in Source/Mistworld/MistAlphonseAbilityDefinitions.cpp;
+    the controller selects a definition for each equipped slot.
+
+Useful play checks
+  - At spawn, press L, unlock Abyss, select all four alternate abilities.
+    Close the menu and hold Q: both the short cone and long wave are shown.
+    Walk while aiming; release to commit. Put one dummy close and one beyond
+    the cone: they receive direct and wave damage respectively.
+  - Dash through a dummy with Abyss W. It takes one direct hit; leaving it
+    standing on the trail adds delayed ticks. Try returning to the checkpoint
+    before the trail expires: the menu should explain why switching is locked.
+  - Use Abyss E, then J. With 20 armor, each J removes 67 HP under guard; two
+    such hits cross the 100 HP threshold and refund 1 s of current R cooldown.
+    An existing R cooldown is needed to see the refund in the top HUD.
+  - Warcry near several dummies, then move and use Space. Walking and attacks
+    speed up for 10 s. Normal constant-speed starts/stops are retained.
+  - Select original R and Abyss W. Damage yourself, throw/catch the sword,
+    and recast R through a dummy. The direct hit and subsequent trail ticks
+    heal you; ordinary W does not. R's preview includes the empowered trail.
+  - Use an ability without hitting an enemy, wait for its active effects to
+    finish, then switch its slot while its cooldown still runs. The displayed
+    remaining time must remain unchanged.
+  - Deal damage, return to the gold circle, and open L. Wait for ten seconds
+    since the last actual damage event; the menu then permits swaps.
+
+Validation
+  Full build/test results are recorded in Saved/Logs/Milestone2FinalBuild.log and
+    Saved/Logs/Milestone2Tests.log, with the automation report under
+    Saved/Automation/Milestone2Final. See Milestone2Results.json for final state.
+  All 17 automated checks passed with zero test errors, including the 16-kit
+    matrix and all 13 existing combat/movement suites. Fixture navigation and
+    restricted-network connectivity probes generated non-failing warnings.
+  The loadout suite also checks enabled HUD click dispatch, the actual unlock
+    and Q/W/E/R button callbacks, blocked combat/movement while editing, and
+    closing on mouse release without issuing a move command.
+  Automated gameplay checks use a fresh full native DLL, NullRHI (no rendered
+    graphics) and fixed 60 Hz simulation. They verify real combat timing,
+    health math, targeting and loadout interactions. Visual appearance and
+    the mouse-driven menu should also be checked in the normal editor.
+  Later scope: dungeon reward/save in Milestone 3, early two-player networking
+    in Milestone 4, then additional heroes, full crypt/world/ranked systems.

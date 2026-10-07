@@ -1,0 +1,95 @@
+Mistworld - Milestone 3: one playable crypt dungeon slice
+
+Start
+  Open E:\Unreal Projects\Mistworld\Mistworld.uproject normally in Unreal.
+  Open /Game/Mistworld/Maps/Lvl_CryptSlice and press Play.
+  Click the viewport for keyboard focus. This is a single-player dungeon with
+    placeholder mannequin, sword, guardian shapes and dungeon art.
+  The existing /Game/Mistworld/Maps/Lvl_CombatTest remains the combat sandbox.
+
+Controls
+  Click/hold click: constant-speed navigation. Right click: cancel orders/aim.
+  Hold Q/W/E/R: aim; release: cast. Moving while aiming remains supported.
+  Space: repeat basic attack, nearest enemy unless the cursor selects another.
+  F: Flash, up to 6 m, 60 s cooldown. L: checkpoint loadout. I: inventory.
+  C: claim the chest reward while inside the reward checkpoint after victory.
+  L and I open mutually exclusive menus and stop new movement/attack orders.
+    They do not pause enemies. Close the menu before continuing combat.
+  Prototype Unlock Abyss remains available in L at a safe checkpoint. The
+    unlock and four individual ability selections now save in the crypt.
+  T: training dummy; J: self-test damage; Y: development reset. Y deliberately
+    resets cooldowns and health, returns you to the active checkpoint and
+    clears an unfinished encounter. It retains earned loot and completion.
+
+Encounter
+  You start at the gold entrance checkpoint in the west foyer. Walk east
+    through the opening to start the fight. Its gate closes during the attempt.
+  Ember (orange cube), Tide (blue sphere) and Stone (green cone) guard the
+    golem. Their matching seals disappear as each guardian is defeated.
+  Guardians inside the blue 7 m protective circle have 75% damage reduction.
+    Bait a charge outside it and attack during the six-second recovery.
+  Each charge shows its locked direction and lane for 1.2 s before moving.
+    It travels up to 8.5 m at 9 m/s and deals 120 raw physical damage once.
+    Dodge sideways after the tell. Walls stop a charge; units do not block it.
+  Kill all three guardians to expose the golem for 15 s. If it survives, it
+    summons a fresh wave while retaining the health damage already dealt.
+  The exposed golem uses a locked 110-degree, 2.5 m cone with a 1.1 s tell,
+    180 raw physical damage and 1.8 s recovery. Step out of the shown cone.
+  Guardian base health is 300; golem health is 3000. Both have 20 armor and
+    magic resistance. The golem is immune while protected. Guardian charges
+    provide the intended escape from protection; displacement cannot do so.
+  Loadout, equipment and checkpoint changes are blocked during an active
+    attempt, even if you have avoided damage for ten seconds.
+  Defeat returns you to the active checkpoint after four seconds with three
+    seconds of spawn protection. An unfinished fight resets. Released sword,
+    wave and trail effects from a wiped attempt are removed. Normal death
+    preserves cooldown deadlines; respawning does not refresh abilities.
+
+Reward and saved progression
+  Victory opens the gate and activates the northeast reward checkpoint.
+  Enter its gold circle and wait for ten quiet seconds plus the end of active
+    effects. Press C near the chest to claim the Necrotic Greatsword once.
+  Press I, select Greatsword Blade and click Equip blade. It adds 5% to
+    Alphonse's ability damage, including
+    released sword hits, shockwaves and trail ticks. Basic attacks retain
+    their original damage. Equip/unequip requires a safe checkpoint.
+  The crypt saves completion, reward ownership, equipment, checkpoint,
+    Abyss unlock, mixed loadout and the remaining six combat cooldowns.
+  Autosaves occur every two seconds and on changes/normal Play shutdown.
+    Cooldowns continue to elapse during time spent outside the game.
+  Resume after stopping Play or restarting Unreal: a cleared crypt remains
+    cleared, you return to the saved checkpoint, and equipment remains equipped.
+    The chest cannot award a duplicate. This slice represents one saved clear;
+    repeatable dungeon runs are later scope.
+  Save location: Saved/SaveGames/Mistworld.Crypt.v1.sav in this project.
+    The filename is retained for compatibility. The current data version is 2;
+    version-1 saves migrate automatically to the Greatsword Blade slot while
+    preserving earned progress, loadout, cooldowns and the save revision.
+    It is a versioned local prototype save, separate from online progression.
+    Missing or malformed saves start safely at the entrance. Failed writes
+    do not grant/equip loot or activate a new checkpoint. A stale save cannot
+    replace newer earned progress. The HUD displays save status.
+
+Useful play checks
+  - Cross the foyer opening. Confirm the gate closes and all three guardians
+    appear. Walk while holding Q, dodge their shown lanes, then attack outside
+    the protective circle. Observe each matching seal going dark on death.
+  - Defeat all three. Attack the golem during its 15 s opening while dodging
+    the cone. Let a window expire: a new wave appears without healing the boss.
+  - Lose one attempt. Confirm checkpoint respawn, immunity, reset guardians,
+    no surviving trail damage, and cooldowns still counting down.
+  - Win, claim and equip the reward at the northeast checkpoint. Stop Play,
+    start again, then restart Unreal normally and start again. Confirm your
+    checkpoint/loadout/loot and cleared state persist without a second reward.
+
+Automated acceptance
+  Mistworld.Crypt.PlayableSlice uses the real generated map and two separate
+    Play sessions with an isolated temporary save. It checks navigation,
+    encounter entry/wipe, checkpoint revival, reward/equipment, exact 5%
+    ability scaling, unchanged basic damage and restored progress/cooldowns.
+  Mistworld.Dungeon tests guardian protection/telegraphs/collision and golem
+    phases. Mistworld.Progression tests persistence, corruption, write failure
+    and stale-save protection. Tests never use the player's crypt save.
+  Earlier combat, movement, targeting, loadout and mixed-kit tests remain part
+    of the full Mistworld suite. See Saved/Automation/Milestone3Final/index.json
+    and Saved/Logs/Milestone3Tests.log for the verified build's results.

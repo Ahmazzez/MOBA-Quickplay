@@ -1,0 +1,402 @@
+{
+  "mesh": "SK_Anima.fbx",
+  "height_cm": 170,
+  "force_front_x_axis": true,
+  "fps": 24,
+  "import_uniform_scale": 1,
+  "root_name": "Root",
+  "source": "https://vroid.pixiv.help/hc/en-us/articles/360014900113",
+  "download_source": "https://opengameart.org/content/vroid-studio-cc0-models",
+  "model": "Vita / AvatarSample_F (VRoid beta AvatarSample3)",
+  "author": "VRoid Project / pixiv",
+  "license": "CC0 1.0",
+  "clips": {
+    "Idle": {
+      "file": "AN_Anima_Idle.fbx",
+      "source_animation": "Quaternius Idle retargeted to Vita",
+      "frames": [
+        0,
+        50
+      ],
+      "duration": 2.0833333333333335
+    },
+    "Run": {
+      "file": "AN_Anima_Run.fbx",
+      "source_animation": "Quaternius Run retargeted to Vita",
+      "frames": [
+        0,
+        24
+      ],
+      "duration": 1.0
+    },
+    "Attack": {
+      "file": "AN_Anima_Attack.fbx",
+      "source_animation": "Quaternius Attack retargeted to Vita",
+      "frames": [
+        0,
+        31
+      ],
+      "duration": 1.2916666666666667
+    },
+    "Thrust": {
+      "file": "AN_Anima_Thrust.fbx",
+      "source_animation": "Quaternius Thrust retargeted to Vita",
+      "frames": [
+        0,
+        18
+      ],
+      "duration": 0.75
+    },
+    "Dash": {
+      "file": "AN_Anima_Dash.fbx",
+      "source_animation": "Mistworld quick lunge",
+      "frames": [
+        0,
+        10
+      ],
+      "duration": 0.4166666666666667
+    },
+    "Guard": {
+      "file": "AN_Anima_Guard.fbx",
+      "source_animation": "Quaternius Guard retargeted to Vita",
+      "frames": [
+        0,
+        24
+      ],
+      "duration": 1.0
+    },
+    "Ultimate": {
+      "file": "AN_Anima_Ultimate.fbx",
+      "source_animation": "Quaternius Ultimate retargeted to Vita",
+      "frames": [
+        0,
+        31
+      ],
+      "duration": 1.2916666666666667
+    },
+    "Death": {
+      "file": "AN_Anima_Death.fbx",
+      "source_animation": "Quaternius Death retargeted to Vita",
+      "frames": [
+        0,
+        32
+      ],
+      "duration": 1.3333333333333333
+    }
+  },
+  "materials": [
+    {
+      "name": "Anima_FaceMouth_00_FACE",
+      "source_material": "F00_000_00_FaceMouth_00_FACE",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_FaceMouth_00_FACE.png",
+      "alpha_mode": "OPAQUE",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": false,
+      "emissive_strength": 0.13
+    },
+    {
+      "name": "Anima_EyeWhite_00_EYE",
+      "source_material": "F00_000_00_EyeWhite_00_EYE",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_EyeWhite_00_EYE.png",
+      "alpha_mode": "OPAQUE",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": false,
+      "emissive_strength": 0.13
+    },
+    {
+      "name": "Anima_FaceEyeline_00_FACE",
+      "source_material": "F00_000_00_FaceEyeline_00_FACE",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_FaceEyeline_00_FACE.png",
+      "alpha_mode": "BLEND",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": true,
+      "emissive_strength": 0.13
+    },
+    {
+      "name": "Anima_FaceEyelash_00_FACE",
+      "source_material": "F00_000_00_FaceEyelash_00_FACE",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_FaceEyelash_00_FACE.png",
+      "alpha_mode": "BLEND",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": true,
+      "emissive_strength": 0.13
+    },
+    {
+      "name": "Anima_FaceBrow_00_FACE",
+      "source_material": "F00_000_00_FaceBrow_00_FACE",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_FaceBrow_00_FACE.png",
+      "alpha_mode": "BLEND",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": true,
+      "emissive_strength": 0.13
+    },
+    {
+      "name": "Anima_EyeIris_00_EYE",
+      "source_material": "F00_000_00_EyeIris_00_EYE",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_EyeIris_00_EYE.png",
+      "alpha_mode": "MASKED",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": false,
+      "emissive_strength": 0.13
+    },
+    {
+      "name": "Anima_EyeHighlight_00_EYE",
+      "source_material": "F00_000_00_EyeHighlight_00_EYE",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_EyeHighlight_00_EYE.png",
+      "alpha_mode": "BLEND",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": true,
+      "emissive_strength": 0.13
+    },
+    {
+      "name": "Anima_Face_00_SKIN",
+      "source_material": "F00_000_00_Face_00_SKIN",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_Face_00_SKIN.png",
+      "alpha_mode": "OPAQUE",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": false,
+      "emissive_strength": 0.04
+    },
+    {
+      "name": "Anima_EyeExtra_01_EYE",
+      "source_material": "F00_000_00_EyeExtra_01_EYE",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_EyeExtra_01_EYE.png",
+      "alpha_mode": "BLEND",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": false,
+      "emissive_strength": 0.13
+    },
+    {
+      "name": "Anima_Body_00_SKIN",
+      "source_material": "F00_002_02_Body_00_SKIN",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_Body_00_SKIN.png",
+      "alpha_mode": "MASKED",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": false,
+      "emissive_strength": 0.04
+    },
+    {
+      "name": "Anima_Onepice_01_CLOTH",
+      "source_material": "F00_002_01_Onepice_01_CLOTH",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_Onepice_01_CLOTH.png",
+      "alpha_mode": "MASKED",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": true,
+      "emissive_strength": 0.04
+    },
+    {
+      "name": "Anima_Shoes_01_CLOTH",
+      "source_material": "F00_002_01_Shoes_01_CLOTH",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_Shoes_01_CLOTH.png",
+      "alpha_mode": "MASKED",
+      "opacity_mask_clip_value": 0.5,
+      "two_sided": true,
+      "emissive_strength": 0.04
+    },
+    {
+      "name": "Anima_HairBack_00_HAIR",
+      "source_material": "F00_000_HairBack_00_HAIR",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_HairBack_00_HAIR.png",
+      "alpha_mode": "MASKED",
+      "opacity_mask_clip_value": 0.35,
+      "two_sided": false,
+      "emissive_strength": 0.04
+    },
+    {
+      "name": "Anima_Hair_00_HAIR_01",
+      "source_material": "F00_000_Hair_00_HAIR_01",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_Hair_00_HAIR_01.png",
+      "alpha_mode": "MASKED",
+      "opacity_mask_clip_value": 0.35,
+      "two_sided": true,
+      "emissive_strength": 0.04
+    },
+    {
+      "name": "Anima_Hair_00_HAIR_02",
+      "source_material": "F00_000_Hair_00_HAIR_02",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_Hair_00_HAIR_02.png",
+      "alpha_mode": "MASKED",
+      "opacity_mask_clip_value": 0.35,
+      "two_sided": true,
+      "emissive_strength": 0.04
+    },
+    {
+      "name": "Anima_Hair_00_HAIR_03",
+      "source_material": "F00_000_Hair_00_HAIR_03",
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "base_color_texture": "Textures/T_Anima_Hair_00_HAIR_03.png",
+      "alpha_mode": "MASKED",
+      "opacity_mask_clip_value": 0.35,
+      "two_sided": true,
+      "emissive_strength": 0.04
+    },
+    {
+      "name": "Anima_RapierSteel",
+      "color": [
+        0.58,
+        0.65,
+        0.76,
+        1
+      ],
+      "metallic": 0.85,
+      "roughness": 0.24
+    },
+    {
+      "name": "Anima_RapierGold",
+      "color": [
+        0.57,
+        0.34,
+        0.07,
+        1
+      ],
+      "metallic": 0.72,
+      "roughness": 0.32
+    },
+    {
+      "name": "Anima_WeaponGrip",
+      "color": [
+        0.023,
+        0.027,
+        0.038,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.83
+    }
+  ],
+  "bones": 160,
+  "required_bones": [
+    "Root",
+    "Head",
+    "Wrist_R",
+    "Wrist_L"
+  ],
+  "triangles": 27290
+}

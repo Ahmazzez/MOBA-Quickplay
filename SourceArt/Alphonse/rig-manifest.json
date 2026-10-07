@@ -1,0 +1,1976 @@
+{
+  "source_sha256": "69b7e0a1b0173356e13debf6839df025d03bad3b821b7436a227ee015b85e58f",
+  "blend": "Alphonse-Game-Rig.blend",
+  "mesh_fbx": "SK_Alphonse_Blockout.fbx",
+  "sword_fbx": "SM_Alphonse_Greatsword.fbx",
+  "animations": {
+    "Idle": {
+      "duration": 2.0,
+      "loop": true,
+      "contact": null,
+      "action": "A_Alphonse_Idle",
+      "frames": 121,
+      "fbx": "A_Alphonse_Idle.fbx"
+    },
+    "Run": {
+      "duration": 0.8,
+      "loop": true,
+      "contact": null,
+      "action": "A_Alphonse_Run",
+      "frames": 49,
+      "fbx": "A_Alphonse_Run.fbx"
+    },
+    "Auto": {
+      "duration": 0.6,
+      "loop": false,
+      "contact": 0.18,
+      "action": "A_Alphonse_Auto",
+      "frames": 37,
+      "fbx": "A_Alphonse_Auto.fbx"
+    },
+    "Slash": {
+      "duration": 0.8,
+      "loop": false,
+      "contact": 0.25,
+      "action": "A_Alphonse_Slash",
+      "frames": 49,
+      "fbx": "A_Alphonse_Slash.fbx"
+    },
+    "Quake": {
+      "duration": 0.9,
+      "loop": false,
+      "contact": 0.35,
+      "action": "A_Alphonse_Quake",
+      "frames": 55,
+      "fbx": "A_Alphonse_Quake.fbx"
+    },
+    "SpinDash": {
+      "duration": 0.5,
+      "loop": false,
+      "contact": 0.1,
+      "action": "A_Alphonse_SpinDash",
+      "frames": 31,
+      "fbx": "A_Alphonse_SpinDash.fbx"
+    },
+    "AbyssDash": {
+      "duration": 0.5,
+      "loop": false,
+      "contact": 0.1,
+      "action": "A_Alphonse_AbyssDash",
+      "frames": 31,
+      "fbx": "A_Alphonse_AbyssDash.fbx"
+    },
+    "Throw": {
+      "duration": 0.75,
+      "loop": false,
+      "contact": 0.35,
+      "action": "A_Alphonse_Throw",
+      "frames": 46,
+      "fbx": "A_Alphonse_Throw.fbx"
+    },
+    "Warcry": {
+      "duration": 0.9,
+      "loop": false,
+      "contact": 0.4,
+      "action": "A_Alphonse_Warcry",
+      "frames": 55,
+      "fbx": "A_Alphonse_Warcry.fbx"
+    },
+    "Guard": {
+      "duration": 1.0,
+      "loop": true,
+      "contact": null,
+      "action": "A_Alphonse_Guard",
+      "frames": 61,
+      "fbx": "A_Alphonse_Guard.fbx"
+    },
+    "AbyssGuard": {
+      "duration": 1.0,
+      "loop": true,
+      "contact": null,
+      "action": "A_Alphonse_AbyssGuard",
+      "frames": 61,
+      "fbx": "A_Alphonse_AbyssGuard.fbx"
+    },
+    "Flash": {
+      "duration": 0.18,
+      "loop": false,
+      "contact": null,
+      "action": "A_Alphonse_Flash",
+      "frames": 12,
+      "fbx": "A_Alphonse_Flash.fbx"
+    },
+    "Death": {
+      "duration": 0.8,
+      "loop": false,
+      "contact": null,
+      "action": "A_Alphonse_Death",
+      "frames": 49,
+      "fbx": "A_Alphonse_Death.fbx"
+    }
+  },
+  "materials": {
+    "Ivory enamel": {
+      "base_color": [
+        0.6800000071525574,
+        0.6499999761581421,
+        0.550000011920929,
+        1.0
+      ],
+      "roughness": 0.5699999928474426,
+      "metallic": 0.07999999821186066
+    },
+    "Warm antique gold": {
+      "base_color": [
+        0.5600000023841858,
+        0.35499998927116394,
+        0.0949999988079071,
+        1.0
+      ],
+      "roughness": 0.4000000059604645,
+      "metallic": 0.4000000059604645
+    },
+    "Ivory armor recessed facets": {
+      "base_color": [
+        0.47999998927116394,
+        0.4650000035762787,
+        0.39500001072883606,
+        1.0
+      ],
+      "roughness": 0.6600000262260437,
+      "metallic": 0.05000000074505806
+    },
+    "Brown leather": {
+      "base_color": [
+        0.08500000089406967,
+        0.04600000008940697,
+        0.024000000208616257,
+        1.0
+      ],
+      "roughness": 0.7799999713897705,
+      "metallic": 0.0
+    },
+    "Royal blue fabric": {
+      "base_color": [
+        0.03200000151991844,
+        0.06499999761581421,
+        0.19499999284744263,
+        1.0
+      ],
+      "roughness": 0.8500000238418579,
+      "metallic": 0.0
+    },
+    "Warm skin": {
+      "base_color": [
+        0.6399999856948853,
+        0.4000000059604645,
+        0.26499998569488525,
+        1.0
+      ],
+      "roughness": 0.699999988079071,
+      "metallic": 0.0
+    },
+    "Dark brown leather gloves": {
+      "base_color": [
+        0.04600000008940697,
+        0.028999999165534973,
+        0.01899999938905239,
+        1.0
+      ],
+      "roughness": 0.7799999713897705,
+      "metallic": 0.0
+    },
+    "Heavy reference eyebrows": {
+      "base_color": [
+        0.11999999731779099,
+        0.07199999690055847,
+        0.02500000037252903,
+        1.0
+      ],
+      "roughness": 0.8299999833106995,
+      "metallic": 0.0
+    },
+    "Reference warm tan face": {
+      "base_color": [
+        0.41999998688697815,
+        0.23000000417232513,
+        0.10499999672174454,
+        1.0
+      ],
+      "roughness": 0.8199999928474426,
+      "metallic": 0.0
+    },
+    "Bright eye catchlights.001": {
+      "base_color": [
+        0.9800000190734863,
+        0.9800000190734863,
+        0.9300000071525574,
+        1.0
+      ],
+      "roughness": 0.23999999463558197,
+      "metallic": 0.0
+    },
+    "Subtle offwhite eye inset": {
+      "base_color": [
+        0.5299999713897705,
+        0.550000011920929,
+        0.46000000834465027,
+        1.0
+      ],
+      "roughness": 0.7200000286102295,
+      "metallic": 0.0
+    },
+    "Reference golden hair": {
+      "base_color": [
+        0.5199999809265137,
+        0.30000001192092896,
+        0.05000000074505806,
+        1.0
+      ],
+      "roughness": 0.7799999713897705,
+      "metallic": 0.0
+    },
+    "Reference golden shadow": {
+      "base_color": [
+        0.3100000023841858,
+        0.1599999964237213,
+        0.02500000037252903,
+        1.0
+      ],
+      "roughness": 0.8199999928474426,
+      "metallic": 0.0
+    },
+    "Reference golden highlight": {
+      "base_color": [
+        0.6600000262260437,
+        0.38999998569488525,
+        0.07500000298023224,
+        1.0
+      ],
+      "roughness": 0.7799999713897705,
+      "metallic": 0.0
+    },
+    "Muted slate blue eye inset": {
+      "base_color": [
+        0.017999999225139618,
+        0.04500000178813934,
+        0.05999999865889549,
+        1.0
+      ],
+      "roughness": 0.7300000190734863,
+      "metallic": 0.0
+    },
+    "Restrained mouth seam": {
+      "base_color": [
+        0.07999999821186066,
+        0.03500000014901161,
+        0.02500000037252903,
+        1.0
+      ],
+      "roughness": 0.8700000047683716,
+      "metallic": 0.0
+    },
+    "Deep blue black pupils.001": {
+      "base_color": [
+        0.004000000189989805,
+        0.008999999612569809,
+        0.014999999664723873,
+        1.0
+      ],
+      "roughness": 0.3799999952316284,
+      "metallic": 0.0
+    },
+    "Warm charcoal eye outlines.001": {
+      "base_color": [
+        0.02199999988079071,
+        0.014999999664723873,
+        0.013000000268220901,
+        1.0
+      ],
+      "roughness": 0.6800000071525574,
+      "metallic": 0.0
+    },
+    "Greatsword steel": {
+      "base_color": [
+        0.46000000834465027,
+        0.5,
+        0.550000011920929,
+        1.0
+      ],
+      "roughness": 0.3799999952316284,
+      "metallic": 0.6499999761581421
+    }
+  },
+  "weapon_socket": {
+    "bone": "weapon_r",
+    "translation_cm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_deg": [
+      0,
+      0,
+      0
+    ]
+  },
+  "mesh_transform": {
+    "translation": [
+      0,
+      0,
+      -96
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  "native_forward": "-Y",
+  "native_up": "+Z",
+  "sword_blade_axis": "+X",
+  "fbx_primary_bone_axis": "X",
+  "fbx_secondary_bone_axis": "-Z",
+  "root_name": "root",
+  "fps": 60,
+  "expected_height_cm": 200,
+  "material_slot_names": [
+    "Ivory enamel",
+    "Warm antique gold",
+    "Ivory armor recessed facets",
+    "Brown leather",
+    "Royal blue fabric",
+    "Warm skin",
+    "Dark brown leather gloves",
+    "Heavy reference eyebrows",
+    "Reference warm tan face",
+    "Bright eye catchlights.001",
+    "Subtle offwhite eye inset",
+    "Reference golden hair",
+    "Reference golden shadow",
+    "Reference golden highlight",
+    "Muted slate blue eye inset",
+    "Restrained mouth seam",
+    "Deep blue black pupils.001",
+    "Warm charcoal eye outlines.001"
+  ],
+  "bones": {
+    "root": {
+      "head": [
+        0,
+        0,
+        0
+      ],
+      "tail": [
+        0,
+        0,
+        0.2
+      ],
+      "parent": null
+    },
+    "pelvis": {
+      "head": [
+        0,
+        0,
+        1.035
+      ],
+      "tail": [
+        0,
+        0,
+        1.18
+      ],
+      "parent": "root"
+    },
+    "spine_01": {
+      "head": [
+        0,
+        0,
+        1.125
+      ],
+      "tail": [
+        0,
+        0,
+        1.3
+      ],
+      "parent": "pelvis"
+    },
+    "spine_02": {
+      "head": [
+        0,
+        0,
+        1.3
+      ],
+      "tail": [
+        0,
+        0,
+        1.49
+      ],
+      "parent": "spine_01"
+    },
+    "spine_03": {
+      "head": [
+        0,
+        0,
+        1.49
+      ],
+      "tail": [
+        0,
+        0,
+        1.645
+      ],
+      "parent": "spine_02"
+    },
+    "neck_01": {
+      "head": [
+        0,
+        0,
+        1.645
+      ],
+      "tail": [
+        0,
+        0,
+        1.74
+      ],
+      "parent": "spine_03"
+    },
+    "head": {
+      "head": [
+        0,
+        0,
+        1.74
+      ],
+      "tail": [
+        0,
+        0,
+        1.98
+      ],
+      "parent": "neck_01"
+    },
+    "clavicle_r": {
+      "head": [
+        -0.06,
+        0,
+        1.595
+      ],
+      "tail": [
+        -0.3199999928474426,
+        0.0,
+        1.5499999523162842
+      ],
+      "parent": "spine_03"
+    },
+    "upperarm_r": {
+      "head": [
+        -0.3199999928474426,
+        0.0,
+        1.5499999523162842
+      ],
+      "tail": [
+        -0.4449999928474426,
+        -0.0020000000949949026,
+        1.2000000476837158
+      ],
+      "parent": "clavicle_r"
+    },
+    "lowerarm_r": {
+      "head": [
+        -0.4449999928474426,
+        -0.0020000000949949026,
+        1.2000000476837158
+      ],
+      "tail": [
+        -0.5199999809265137,
+        -0.012000000104308128,
+        0.9300000071525574
+      ],
+      "parent": "upperarm_r"
+    },
+    "hand_r": {
+      "head": [
+        -0.5199999809265137,
+        -0.012000000104308128,
+        0.9300000071525574
+      ],
+      "tail": [
+        -0.533,
+        -0.012,
+        0.81
+      ],
+      "parent": "lowerarm_r"
+    },
+    "thigh_r": {
+      "head": [
+        -0.184,
+        0.015,
+        1.035
+      ],
+      "tail": [
+        -0.27,
+        -0.002,
+        0.525
+      ],
+      "parent": "pelvis"
+    },
+    "calf_r": {
+      "head": [
+        -0.27,
+        -0.002,
+        0.525
+      ],
+      "tail": [
+        -0.37,
+        0.015,
+        0.174
+      ],
+      "parent": "thigh_r"
+    },
+    "foot_r": {
+      "head": [
+        -0.37,
+        0.015,
+        0.174
+      ],
+      "tail": [
+        -0.37,
+        -0.23,
+        0.075
+      ],
+      "parent": "calf_r"
+    },
+    "pauldron_r": {
+      "head": [
+        -0.3199999928474426,
+        0.0,
+        1.5499999523162842
+      ],
+      "tail": [
+        -0.32,
+        0,
+        1.71
+      ],
+      "parent": "clavicle_r"
+    },
+    "tasset_r": {
+      "head": [
+        -0.26,
+        0,
+        1.115
+      ],
+      "tail": [
+        -0.32,
+        0,
+        0.83
+      ],
+      "parent": "pelvis"
+    },
+    "clavicle_l": {
+      "head": [
+        0.06,
+        0,
+        1.595
+      ],
+      "tail": [
+        0.3199999928474426,
+        0.0,
+        1.5499999523162842
+      ],
+      "parent": "spine_03"
+    },
+    "upperarm_l": {
+      "head": [
+        0.3199999928474426,
+        0.0,
+        1.5499999523162842
+      ],
+      "tail": [
+        0.4449999928474426,
+        -0.0020000000949949026,
+        1.2000000476837158
+      ],
+      "parent": "clavicle_l"
+    },
+    "lowerarm_l": {
+      "head": [
+        0.4449999928474426,
+        -0.0020000000949949026,
+        1.2000000476837158
+      ],
+      "tail": [
+        0.5199999809265137,
+        -0.012000000104308128,
+        0.9300000071525574
+      ],
+      "parent": "upperarm_l"
+    },
+    "hand_l": {
+      "head": [
+        0.5199999809265137,
+        -0.012000000104308128,
+        0.9300000071525574
+      ],
+      "tail": [
+        0.533,
+        -0.012,
+        0.81
+      ],
+      "parent": "lowerarm_l"
+    },
+    "thigh_l": {
+      "head": [
+        0.184,
+        0.015,
+        1.035
+      ],
+      "tail": [
+        0.27,
+        -0.002,
+        0.525
+      ],
+      "parent": "pelvis"
+    },
+    "calf_l": {
+      "head": [
+        0.27,
+        -0.002,
+        0.525
+      ],
+      "tail": [
+        0.37,
+        0.015,
+        0.174
+      ],
+      "parent": "thigh_l"
+    },
+    "foot_l": {
+      "head": [
+        0.37,
+        0.015,
+        0.174
+      ],
+      "tail": [
+        0.37,
+        -0.23,
+        0.075
+      ],
+      "parent": "calf_l"
+    },
+    "pauldron_l": {
+      "head": [
+        0.3199999928474426,
+        0.0,
+        1.5499999523162842
+      ],
+      "tail": [
+        0.32,
+        0,
+        1.71
+      ],
+      "parent": "clavicle_l"
+    },
+    "tasset_l": {
+      "head": [
+        0.26,
+        0,
+        1.115
+      ],
+      "tail": [
+        0.32,
+        0,
+        0.83
+      ],
+      "parent": "pelvis"
+    },
+    "tabard_front": {
+      "head": [
+        0,
+        -0.2,
+        1.105
+      ],
+      "tail": [
+        0,
+        -0.2,
+        0.68
+      ],
+      "parent": "pelvis"
+    },
+    "tabard_back": {
+      "head": [
+        0,
+        0.2,
+        1.105
+      ],
+      "tail": [
+        0,
+        0.2,
+        0.68
+      ],
+      "parent": "pelvis"
+    },
+    "weapon_r": {
+      "head": [
+        -0.5320000052452087,
+        -0.03200000151991844,
+        0.8349999785423279
+      ],
+      "tail": [
+        -0.5320000052452087,
+        -0.15200300514698029,
+        0.9408266544342041
+      ],
+      "parent": "hand_r"
+    }
+  },
+  "weapon_rest_matrix": [
+    [
+      -2.1606683731079102e-07,
+      -2.2351741790771484e-08,
+      -1.0000001192092896,
+      -0.531999945640564
+    ],
+    [
+      -0.6614165306091309,
+      -0.7500187158584595,
+      -2.4586915969848633e-07,
+      -0.031999994069337845
+    ],
+    [
+      -0.750018835067749,
+      0.6614165902137756,
+      2.457527443766594e-07,
+      0.8350000381469727
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "rig_mapping": [
+    {
+      "mesh": "Armor - angular lower chest plate",
+      "bone": "spine_03",
+      "method": "rigid torso armor plus underlying cloth",
+      "center": [
+        0.0,
+        -0.1805,
+        1.295
+      ]
+    },
+    {
+      "mesh": "Armor - ankle gold rim L",
+      "bone": "calf_r",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        -0.3536,
+        0.014,
+        0.22183
+      ]
+    },
+    {
+      "mesh": "Armor - ankle gold rim R",
+      "bone": "calf_l",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        0.3536,
+        0.014,
+        0.22183
+      ]
+    },
+    {
+      "mesh": "Armor - broad faceted cuirass",
+      "bone": "spine_03",
+      "method": "rigid torso armor plus underlying cloth",
+      "center": [
+        0.0,
+        -0.015,
+        1.4475
+      ]
+    },
+    {
+      "mesh": "Armor - collar gold top edge",
+      "bone": "spine_03",
+      "method": "rigid torso armor plus underlying cloth",
+      "center": [
+        0.0,
+        0.0,
+        1.6875
+      ]
+    },
+    {
+      "mesh": "Armor - convex faceted pauldron L",
+      "bone": "pauldron_r",
+      "method": "rigid secondary; retain dome shape; rotate 30-50 percent upper-arm raise",
+      "center": [
+        -0.3835,
+        0.0,
+        1.575
+      ]
+    },
+    {
+      "mesh": "Armor - convex faceted pauldron R",
+      "bone": "pauldron_l",
+      "method": "rigid secondary; retain dome shape; rotate 30-50 percent upper-arm raise",
+      "center": [
+        0.3835,
+        0.0,
+        1.575
+      ]
+    },
+    {
+      "mesh": "Armor - faceted ivory kneecap L",
+      "bone": "calf_r",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        -0.27,
+        -0.1655,
+        0.52012
+      ]
+    },
+    {
+      "mesh": "Armor - faceted ivory kneecap R",
+      "bone": "calf_l",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        0.27,
+        -0.1655,
+        0.52012
+      ]
+    },
+    {
+      "mesh": "Armor - gold cuirass side edge L",
+      "bone": "spine_03",
+      "method": "rigid torso trim",
+      "center": [
+        -0.2415,
+        -0.1655,
+        1.3925
+      ]
+    },
+    {
+      "mesh": "Armor - gold cuirass side edge R",
+      "bone": "spine_03",
+      "method": "rigid torso trim",
+      "center": [
+        0.2415,
+        -0.1655,
+        1.3925
+      ]
+    },
+    {
+      "mesh": "Armor - gold knee shield border L",
+      "bone": "calf_r",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        -0.27,
+        -0.1425,
+        0.519
+      ]
+    },
+    {
+      "mesh": "Armor - gold knee shield border R",
+      "bone": "calf_l",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        0.27,
+        -0.1425,
+        0.519
+      ]
+    },
+    {
+      "mesh": "Armor - gold shoulder bridge L",
+      "bone": "spine_03",
+      "method": "rigid torso trim",
+      "center": [
+        -0.287,
+        -0.115,
+        1.617
+      ]
+    },
+    {
+      "mesh": "Armor - gold shoulder bridge R",
+      "bone": "spine_03",
+      "method": "rigid torso trim",
+      "center": [
+        0.287,
+        -0.115,
+        1.617
+      ]
+    },
+    {
+      "mesh": "Armor - gold waist edge",
+      "bone": "spine_01",
+      "method": "rigid",
+      "center": [
+        0.0,
+        0.004,
+        1.228
+      ]
+    },
+    {
+      "mesh": "Armor - greave upper gold rim L",
+      "bone": "calf_r",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        -0.2913,
+        0.006,
+        0.47388
+      ]
+    },
+    {
+      "mesh": "Armor - greave upper gold rim R",
+      "bone": "calf_l",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        0.2913,
+        0.006,
+        0.47388
+      ]
+    },
+    {
+      "mesh": "Armor - hip plate back gold border L",
+      "bone": "tasset_r",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        -0.3225,
+        0.1405,
+        0.9775
+      ]
+    },
+    {
+      "mesh": "Armor - hip plate back gold border R",
+      "bone": "tasset_l",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        0.3225,
+        0.1405,
+        0.9775
+      ]
+    },
+    {
+      "mesh": "Armor - hip plate gold border L",
+      "bone": "tasset_r",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        -0.3225,
+        -0.1405,
+        0.9775
+      ]
+    },
+    {
+      "mesh": "Armor - hip plate gold border R",
+      "bone": "tasset_l",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        0.3225,
+        -0.1405,
+        0.9775
+      ]
+    },
+    {
+      "mesh": "Armor - ivory and leather bracer L",
+      "bone": "lowerarm_r",
+      "method": "rigid",
+      "center": [
+        -0.47451,
+        -0.0074,
+        1.05236
+      ]
+    },
+    {
+      "mesh": "Armor - ivory and leather bracer R",
+      "bone": "lowerarm_l",
+      "method": "rigid",
+      "center": [
+        0.47451,
+        -0.0074,
+        1.05236
+      ]
+    },
+    {
+      "mesh": "Armor - ivory hip wedge back L",
+      "bone": "tasset_r",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        -0.32081,
+        0.15199,
+        0.97685
+      ]
+    },
+    {
+      "mesh": "Armor - ivory hip wedge back R",
+      "bone": "tasset_l",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        0.32081,
+        0.15199,
+        0.97685
+      ]
+    },
+    {
+      "mesh": "Armor - ivory hip wedge L",
+      "bone": "tasset_r",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        -0.32081,
+        -0.15199,
+        0.97685
+      ]
+    },
+    {
+      "mesh": "Armor - ivory hip wedge R",
+      "bone": "tasset_l",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        0.32081,
+        -0.15199,
+        0.97685
+      ]
+    },
+    {
+      "mesh": "Armor - ivory knee side return L",
+      "bone": "calf_r",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        -0.28166,
+        0.00514,
+        0.52158
+      ]
+    },
+    {
+      "mesh": "Armor - ivory knee side return R",
+      "bone": "calf_l",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        0.28166,
+        0.00514,
+        0.52158
+      ]
+    },
+    {
+      "mesh": "Armor - ivory tasset side return L",
+      "bone": "tasset_r",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        -0.364,
+        0.0045,
+        0.9635
+      ]
+    },
+    {
+      "mesh": "Armor - ivory tasset side return R",
+      "bone": "tasset_l",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        0.364,
+        0.0045,
+        0.9635
+      ]
+    },
+    {
+      "mesh": "Armor - knee side upper gold rim L",
+      "bone": "calf_r",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        -0.265,
+        0.002,
+        0.57401
+      ]
+    },
+    {
+      "mesh": "Armor - knee side upper gold rim R",
+      "bone": "calf_l",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        0.265,
+        0.002,
+        0.57401
+      ]
+    },
+    {
+      "mesh": "Armor - large ivory greave L",
+      "bone": "calf_r",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        -0.30949,
+        0.0079,
+        0.34203
+      ]
+    },
+    {
+      "mesh": "Armor - large ivory greave R",
+      "bone": "calf_l",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        0.30949,
+        0.0079,
+        0.34203
+      ]
+    },
+    {
+      "mesh": "Armor - open ivory neck collar",
+      "bone": "spine_03",
+      "method": "rigid torso armor plus underlying cloth",
+      "center": [
+        0.0,
+        0.0,
+        1.65
+      ]
+    },
+    {
+      "mesh": "Armor - pauldron gold rim L",
+      "bone": "pauldron_r",
+      "method": "rigid secondary; retain dome shape; rotate 30-50 percent upper-arm raise",
+      "center": [
+        -0.393,
+        0.0,
+        1.4465
+      ]
+    },
+    {
+      "mesh": "Armor - pauldron gold rim R",
+      "bone": "pauldron_l",
+      "method": "rigid secondary; retain dome shape; rotate 30-50 percent upper-arm raise",
+      "center": [
+        0.393,
+        0.0,
+        1.4465
+      ]
+    },
+    {
+      "mesh": "Armor - tasset side lower gold edge L",
+      "bone": "tasset_r",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        -0.42,
+        0.002,
+        0.816
+      ]
+    },
+    {
+      "mesh": "Armor - tasset side lower gold edge R",
+      "bone": "tasset_l",
+      "method": "rigid secondary, rotate 50-65 percent of thigh",
+      "center": [
+        0.42,
+        0.002,
+        0.816
+      ]
+    },
+    {
+      "mesh": "Armor - under-pauldron plate L",
+      "bone": "pauldron_r",
+      "method": "rigid secondary; retain dome shape; rotate 30-50 percent upper-arm raise",
+      "center": [
+        -0.3775,
+        -0.001,
+        1.39132
+      ]
+    },
+    {
+      "mesh": "Armor - under-pauldron plate R",
+      "bone": "pauldron_l",
+      "method": "rigid secondary; retain dome shape; rotate 30-50 percent upper-arm raise",
+      "center": [
+        0.3775,
+        -0.001,
+        1.39132
+      ]
+    },
+    {
+      "mesh": "Armor - upper bracer gold rim L",
+      "bone": "lowerarm_r",
+      "method": "rigid",
+      "center": [
+        -0.46238,
+        -0.006,
+        1.13814
+      ]
+    },
+    {
+      "mesh": "Armor - upper bracer gold rim R",
+      "bone": "lowerarm_l",
+      "method": "rigid",
+      "center": [
+        0.46238,
+        -0.006,
+        1.13814
+      ]
+    },
+    {
+      "mesh": "Armor - wrist gold rim L",
+      "bone": "lowerarm_r",
+      "method": "rigid",
+      "center": [
+        -0.51108,
+        -0.01,
+        0.97
+      ]
+    },
+    {
+      "mesh": "Armor - wrist gold rim R",
+      "bone": "lowerarm_l",
+      "method": "rigid",
+      "center": [
+        0.51108,
+        -0.01,
+        0.97
+      ]
+    },
+    {
+      "mesh": "Body - blue torso volume",
+      "bone": "spine_03",
+      "method": "rigid torso armor plus underlying cloth",
+      "center": [
+        0.0,
+        0.0,
+        1.3975
+      ]
+    },
+    {
+      "mesh": "Body - calf under greave L",
+      "bone": "calf_r",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        -0.30721,
+        0.00242,
+        0.35325
+      ]
+    },
+    {
+      "mesh": "Body - calf under greave R",
+      "bone": "calf_l",
+      "method": "rigid knee shield and greave as one assembly",
+      "center": [
+        0.30721,
+        0.00242,
+        0.35325
+      ]
+    },
+    {
+      "mesh": "Body - compact blue pelvis",
+      "bone": "pelvis",
+      "method": "rigid",
+      "center": [
+        0.0,
+        0.0075,
+        1.02
+      ]
+    },
+    {
+      "mesh": "Body - exposed elbow joint L",
+      "bone": "lowerarm_r",
+      "method": "soft transition: upper cap upperarm, lower cap lowerarm, blend at elbow",
+      "center": [
+        -0.44503,
+        -0.0035,
+        1.18829
+      ]
+    },
+    {
+      "mesh": "Body - exposed elbow joint R",
+      "bone": "lowerarm_l",
+      "method": "soft transition: upper cap upperarm, lower cap lowerarm, blend at elbow",
+      "center": [
+        0.44503,
+        -0.0035,
+        1.18829
+      ]
+    },
+    {
+      "mesh": "Body - forearm under bracer L",
+      "bone": "lowerarm_r",
+      "method": "rigid",
+      "center": [
+        -0.47343,
+        -0.0045,
+        1.06756
+      ]
+    },
+    {
+      "mesh": "Body - forearm under bracer R",
+      "bone": "lowerarm_l",
+      "method": "rigid",
+      "center": [
+        0.47343,
+        -0.0045,
+        1.06756
+      ]
+    },
+    {
+      "mesh": "Body - narrow knee joint under armor L",
+      "bone": "calf_r",
+      "method": "soft transition: upper cap thigh, lower cap calf, blend at knee",
+      "center": [
+        -0.27045,
+        0.00608,
+        0.54778
+      ]
+    },
+    {
+      "mesh": "Body - narrow knee joint under armor R",
+      "bone": "calf_l",
+      "method": "soft transition: upper cap thigh, lower cap calf, blend at knee",
+      "center": [
+        0.27045,
+        0.00608,
+        0.54778
+      ]
+    },
+    {
+      "mesh": "Body - short thick neck",
+      "bone": "neck_01",
+      "method": "neck soft cap blend to head/chest optional",
+      "center": [
+        0.0,
+        0.0,
+        1.6915
+      ]
+    },
+    {
+      "mesh": "Body - shoulder joint L",
+      "bone": "upperarm_r",
+      "method": "rigid main volume; shoulder joint may have clavicle transition",
+      "center": [
+        -0.32,
+        0.0,
+        1.55
+      ]
+    },
+    {
+      "mesh": "Body - shoulder joint R",
+      "bone": "upperarm_l",
+      "method": "rigid main volume; shoulder joint may have clavicle transition",
+      "center": [
+        0.32,
+        0.0,
+        1.55
+      ]
+    },
+    {
+      "mesh": "Boot L_gold_ankle_rim",
+      "bone": "foot_r",
+      "method": "rigid",
+      "center": [
+        -0.37,
+        0.02424,
+        0.187
+      ]
+    },
+    {
+      "mesh": "Boot L_gold_sole",
+      "bone": "foot_r",
+      "method": "rigid",
+      "center": [
+        -0.37,
+        -0.084,
+        0.014
+      ]
+    },
+    {
+      "mesh": "Boot L_ivory_foot",
+      "bone": "foot_r",
+      "method": "rigid",
+      "center": [
+        -0.37,
+        -0.084,
+        0.1135
+      ]
+    },
+    {
+      "mesh": "Boot L_leather_heel",
+      "bone": "foot_r",
+      "method": "rigid",
+      "center": [
+        -0.37,
+        0.12588,
+        0.087
+      ]
+    },
+    {
+      "mesh": "Boot R_gold_ankle_rim",
+      "bone": "foot_l",
+      "method": "rigid",
+      "center": [
+        0.37,
+        0.02424,
+        0.187
+      ]
+    },
+    {
+      "mesh": "Boot R_gold_sole",
+      "bone": "foot_l",
+      "method": "rigid",
+      "center": [
+        0.37,
+        -0.084,
+        0.014
+      ]
+    },
+    {
+      "mesh": "Boot R_ivory_foot",
+      "bone": "foot_l",
+      "method": "rigid",
+      "center": [
+        0.37,
+        -0.084,
+        0.1135
+      ]
+    },
+    {
+      "mesh": "Boot R_leather_heel",
+      "bone": "foot_l",
+      "method": "rigid",
+      "center": [
+        0.37,
+        0.12588,
+        0.087
+      ]
+    },
+    {
+      "mesh": "Brow_HeavyStraight_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.05044,
+        -0.10885,
+        1.895
+      ]
+    },
+    {
+      "mesh": "Brow_HeavyStraight_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.05044,
+        -0.10885,
+        1.895
+      ]
+    },
+    {
+      "mesh": "Cloth - blue tabard panel Back",
+      "bone": "tabard_back",
+      "method": "rigid cloth flap with separate pivot; no simulation",
+      "center": [
+        0.0,
+        0.2065,
+        0.843
+      ]
+    },
+    {
+      "mesh": "Cloth - blue tabard panel Front",
+      "bone": "tabard_front",
+      "method": "rigid cloth flap with separate pivot; no simulation",
+      "center": [
+        0.0,
+        -0.2105,
+        0.843
+      ]
+    },
+    {
+      "mesh": "Cloth - broad thigh mass L",
+      "bone": "thigh_r",
+      "method": "rigid",
+      "center": [
+        -0.20121,
+        0.01247,
+        0.8366
+      ]
+    },
+    {
+      "mesh": "Cloth - broad thigh mass R",
+      "bone": "thigh_l",
+      "method": "rigid",
+      "center": [
+        0.20121,
+        0.01247,
+        0.8366
+      ]
+    },
+    {
+      "mesh": "Cloth - heavy blue upper arm L",
+      "bone": "upperarm_r",
+      "method": "rigid main volume; shoulder joint may have clavicle transition",
+      "center": [
+        -0.37296,
+        -0.0011,
+        1.37839
+      ]
+    },
+    {
+      "mesh": "Cloth - heavy blue upper arm R",
+      "bone": "upperarm_l",
+      "method": "rigid main volume; shoulder joint may have clavicle transition",
+      "center": [
+        0.37296,
+        -0.0011,
+        1.37839
+      ]
+    },
+    {
+      "mesh": "Cloth - pointed gold-edged tabard Back",
+      "bone": "tabard_back",
+      "method": "rigid cloth flap with separate pivot; no simulation",
+      "center": [
+        0.0,
+        0.191,
+        0.83
+      ]
+    },
+    {
+      "mesh": "Cloth - pointed gold-edged tabard Front",
+      "bone": "tabard_front",
+      "method": "rigid cloth flap with separate pivot; no simulation",
+      "center": [
+        0.0,
+        -0.204,
+        0.83
+      ]
+    },
+    {
+      "mesh": "Cloth - simple hexagonal gold buckle",
+      "bone": "pelvis",
+      "method": "rigid",
+      "center": [
+        0.0,
+        -0.201,
+        1.155
+      ]
+    },
+    {
+      "mesh": "Cloth - wide brown leather belt",
+      "bone": "pelvis",
+      "method": "rigid",
+      "center": [
+        0.0,
+        -0.002,
+        1.155
+      ]
+    },
+    {
+      "mesh": "Ear_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.1143,
+        -0.0165,
+        1.8523
+      ]
+    },
+    {
+      "mesh": "Ear_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.1143,
+        -0.0165,
+        1.8523
+      ]
+    },
+    {
+      "mesh": "Eye_SubtleGlint_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.0508,
+        -0.12,
+        1.88215
+      ]
+    },
+    {
+      "mesh": "Eye_SubtleGlint_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.04696,
+        -0.12,
+        1.88215
+      ]
+    },
+    {
+      "mesh": "EyeWhite_Hooded_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.04888,
+        -0.1095,
+        1.88
+      ]
+    },
+    {
+      "mesh": "EyeWhite_Hooded_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.04888,
+        -0.1095,
+        1.88
+      ]
+    },
+    {
+      "mesh": "Glove L_curled_knuckle_01",
+      "bone": "hand_r",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        -0.57924,
+        -0.03274,
+        0.80086
+      ]
+    },
+    {
+      "mesh": "Glove L_curled_knuckle_02",
+      "bone": "hand_r",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        -0.55277,
+        -0.03274,
+        0.78671
+      ]
+    },
+    {
+      "mesh": "Glove L_curled_knuckle_03",
+      "bone": "hand_r",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        -0.52492,
+        -0.03274,
+        0.78309
+      ]
+    },
+    {
+      "mesh": "Glove L_curled_knuckle_04",
+      "bone": "hand_r",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        -0.49555,
+        -0.03274,
+        0.79117
+      ]
+    },
+    {
+      "mesh": "Glove L_gold_wrist_band",
+      "bone": "hand_r",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        -0.52091,
+        -0.012,
+        0.92298
+      ]
+    },
+    {
+      "mesh": "Glove L_ivory_backplate",
+      "bone": "hand_r",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        -0.52812,
+        -0.07422,
+        0.84132
+      ]
+    },
+    {
+      "mesh": "Glove L_leather_fist_core",
+      "bone": "hand_r",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        -0.53232,
+        -0.012,
+        0.83522
+      ]
+    },
+    {
+      "mesh": "Glove L_thumb",
+      "bone": "hand_r",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        -0.49329,
+        -0.06446,
+        0.80872
+      ]
+    },
+    {
+      "mesh": "Glove R_curled_knuckle_01",
+      "bone": "hand_l",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        0.49571,
+        -0.03274,
+        0.79
+      ]
+    },
+    {
+      "mesh": "Glove R_curled_knuckle_02",
+      "bone": "hand_l",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        0.52492,
+        -0.03274,
+        0.78309
+      ]
+    },
+    {
+      "mesh": "Glove R_curled_knuckle_03",
+      "bone": "hand_l",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        0.55277,
+        -0.03274,
+        0.78671
+      ]
+    },
+    {
+      "mesh": "Glove R_curled_knuckle_04",
+      "bone": "hand_l",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        0.57909,
+        -0.03274,
+        0.80203
+      ]
+    },
+    {
+      "mesh": "Glove R_gold_wrist_band",
+      "bone": "hand_l",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        0.52091,
+        -0.012,
+        0.92298
+      ]
+    },
+    {
+      "mesh": "Glove R_ivory_backplate",
+      "bone": "hand_l",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        0.52812,
+        -0.07422,
+        0.84132
+      ]
+    },
+    {
+      "mesh": "Glove R_leather_fist_core",
+      "bone": "hand_l",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        0.53232,
+        -0.012,
+        0.83522
+      ]
+    },
+    {
+      "mesh": "Glove R_thumb",
+      "bone": "hand_l",
+      "method": "rigid entire fist; no finger deformation",
+      "center": [
+        0.49329,
+        -0.06446,
+        0.80872
+      ]
+    },
+    {
+      "mesh": "Hair_Central_SweptCrest",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.00208,
+        -0.112,
+        1.978
+      ]
+    },
+    {
+      "mesh": "Hair_Forelock_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.05408,
+        -0.1235,
+        1.9635
+      ]
+    },
+    {
+      "mesh": "Hair_Forelock_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.05408,
+        -0.1235,
+        1.9635
+      ]
+    },
+    {
+      "mesh": "Hair_Mullet_Main",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.0,
+        0.1605,
+        1.7315
+      ]
+    },
+    {
+      "mesh": "Hair_Mullet_SideSweep_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.12896,
+        0.116,
+        1.7975
+      ]
+    },
+    {
+      "mesh": "Hair_Mullet_SideSweep_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.12896,
+        0.116,
+        1.7975
+      ]
+    },
+    {
+      "mesh": "Hair_Swept_Crown",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.00098,
+        -0.0055,
+        1.96
+      ]
+    },
+    {
+      "mesh": "Hair_Temple_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.1161,
+        -0.00478,
+        1.883
+      ]
+    },
+    {
+      "mesh": "Hair_Temple_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.1161,
+        -0.00478,
+        1.883
+      ]
+    },
+    {
+      "mesh": "Head_Reference_LowJawCorners",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.0,
+        -0.03,
+        1.8515
+      ]
+    },
+    {
+      "mesh": "Iris_ClippedSlateBlue_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.04888,
+        -0.1173,
+        1.8811
+      ]
+    },
+    {
+      "mesh": "Iris_ClippedSlateBlue_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.04888,
+        -0.1173,
+        1.8811
+      ]
+    },
+    {
+      "mesh": "Moustache_Curled_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.05101,
+        -0.12224,
+        1.82715
+      ]
+    },
+    {
+      "mesh": "Moustache_Curled_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.05101,
+        -0.12224,
+        1.82715
+      ]
+    },
+    {
+      "mesh": "Mouth_RestrainedSeam",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.0,
+        -0.12825,
+        1.7974
+      ]
+    },
+    {
+      "mesh": "Nose_Planar",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.0,
+        -0.1265,
+        1.8615
+      ]
+    },
+    {
+      "mesh": "Pupil_NarrowFocused_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.04888,
+        -0.1184,
+        1.8812
+      ]
+    },
+    {
+      "mesh": "Pupil_NarrowFocused_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.04888,
+        -0.1184,
+        1.8812
+      ]
+    },
+    {
+      "mesh": "UpperLid_Straight_L",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        -0.04888,
+        -0.1138,
+        1.8859
+      ]
+    },
+    {
+      "mesh": "UpperLid_Straight_R",
+      "bone": "head",
+      "method": "rigid",
+      "center": [
+        0.04888,
+        -0.1138,
+        1.8859
+      ]
+    }
+  ]
+}

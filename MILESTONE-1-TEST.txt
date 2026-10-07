@@ -1,0 +1,201 @@
+Mistworld — Alphonse original-kit combat sandbox
+
+Open E:\Unreal Projects\Mistworld\Mistworld.uproject in UE 5.8.3.
+Open normally from the Epic Launcher or the .uproject file. The automated
+  interactive launch in this restricted task stopped at a cache-configuration
+  dialog; visual verification still needs the normal editor launch.
+Use /Game/Mistworld/Maps/Lvl_CombatTest and press Play.
+Click the viewport for keyboard focus. The old Lvl_TopDown remains available.
+The mannequin and ability visuals are placeholders.
+
+Movement
+  Left click: navigate around obstacles at 500 cm/s.
+  Starts, turns, and arrival stops are immediate, with no acceleration or
+    braking. Fixed destinations have at most one frame of position tolerance.
+  Holding a movement click updates the navigation destination continuously.
+  Q's preview clips its legal outline at terrain and marks blocked range red.
+    Dash/sword previews include both rounded ends of the swept hitbox.
+  Movement continues while holding an ability preview. Committed Q, W, R,
+    empowered R, and basic attack wind-ups stop movement.
+  E is an instant self-buff and does not stop movement.
+
+Controls
+  Hold Q / W / E / R: preview; move the cursor to aim; release to cast.
+    Only one preview is active. Selecting another ready slot replaces it.
+    Right click cancels without spending cooldown.
+  Q: 3 m / 110-degree cleave, 140 physical damage, 0.25 s wind-up, 6 s CD.
+    Hitting at least one Elite dummy refunds 5 s of R cooldown once per cast.
+  W: dash up to 6 m along its legal path at 15 m/s; 0.75 m swept radius;
+    100 physical damage once per target; 0.10 s wind-up; 12 s CD; no heal.
+  E: 50% damage reduction after armor for 5 s; 30 s CD; self indicator.
+  R: 10 m returning sword, 0.60 m swept radius, 18 m/s; 160 physical damage
+    once per target on each leg; 0.35 s wind-up; 120 s CD. The direction is
+    fixed when the aim key is released. Return follows your current position.
+    Hitting a wall starts the return immediately; catching the sword still
+    opens a 2 s R recast window.
+  Hold/release R during RECAST: empowered dash up to 8 m at 22 m/s,
+    radius 1 m, 180 physical damage once per target, 0.10 s wind-up.
+    It consumes the recast without spending or resetting ordinary W's CD.
+    The sword and empowered dash heal 20% of actual HP damage dealt.
+  F: instant cursor-directed Flash, up to 6 m, 60 s CD.
+    Root/stun prevent Flash; silence does not. Terrain/navigation can shorten
+    the endpoint. A completely invalid endpoint does not consume cooldown.
+  Space: select the closest living enemy in basic-attack range and repeat
+    attacks (90 raw damage, 1 s cycle, 0.18 s wind-up). An enemy under the
+    cursor overrides nearest targeting; an explicit out-of-range target is
+    approached first. Automatic targeting excludes targets behind walls.
+    Click elsewhere or right-click to stop attacking.
+  T over clear navigable floor: place an Elite training dummy.
+  Y: development reset for player/dummy health, cooldowns, buffs and recasts;
+    the Sentinel also returns to its original home and clears its AI state.
+  J: apply 120 raw physical test damage to yourself (100 normally, 50 under E).
+  Escape: ends the editor's Play session under its default shortcut.
+
+First enemy encounter
+  The separate 40 m flat arena has a red Sentinel and a passive practice dummy.
+  Enter the Sentinel's 8 m ring, or damage it from within its 14 m home leash.
+  It approaches at 2.5 m/s. In melee range it shows an orange 2.5 m / 100-degree
+    attack sector for 0.8 s. Its facing locks when the warning begins.
+  Move sideways out of the sector before impact, then use its 1.2 s recovery
+    window to attack. The Sentinel does not move or attack during recovery.
+  Its swing deals 100 raw physical damage (83.33 after Alphonse's 20 armor;
+    41.67 during E). Terrain blocks hits. Stun or defeat cancels its swing.
+  The Sentinel has 900 HP and 20 armor/resistance. All current abilities and
+    Space attacks can damage it. Killing it leaves it down until Y reset.
+  Leave the home leash to disengage. It returns home immune to damage/debuffs
+    and restores health only after reaching home. Y resets immediately.
+  At zero HP, Alphonse stops, cancels pending casts/recasts and revives at his
+    starting checkpoint after 4 s. The top HUD shows the respawn countdown.
+    Normal death/revive keeps all cooldown deadlines; they continue ticking.
+
+Death and spawn protection
+  Initial spawn and every normal revive grant 3 s damage/debuff immunity,
+    shown as SPAWN GUARD in the HUD and a cyan ring around the hero.
+  Walking, holding/cancelling an aim preview, self-healing, E and F preserve
+    the protection. A valid committed Q/W/R/recast/basic attack ends only the
+    spawn protection; unrelated immunity sources remain intact.
+  Invalid casts and empty attack orders never spend protection or cooldown.
+  Death clears temporary combat effects and pending input/casts/recasts,
+    disables movement, and restores any temporary dash collision change.
+    The released sword keeps its damage and attribution, but loses healing
+    and recast benefits for this and later lives of the same pawn.
+  The checkpoint must safely fit the hero's capsule; a blocked checkpoint
+    retries rather than reviving inside an obstacle.
+  Y is a development reset: resets cooldowns and the encounter, removes
+    released swords, and immediately revives a dead hero with spawn guard.
+    Using Y while alive clears temporary effects without moving the hero.
+
+Quick checks
+  - Put several dummies in a line with T, then dash through them with W.
+    Each loses 83.33 HP once, even with another unit in front of it.
+  - Q removes 116.67 HP from a 20-armor dummy; an overlapping capsule edge
+    can be hit even if the target's center lies outside the cone.
+  - Press J to lose 100 HP. Use E and J again: the second hit removes 50 HP.
+    Guard lasts 5 s; the HUD shows its remaining duration.
+  - Damage yourself, then throw R through a dummy. Each leg removes 133.33 HP
+    and restores 26.67 HP, limited by missing health. Catch/recast R through
+    another dummy: 150 HP damage and 30 HP healing.
+  - Use ordinary W before R. The empowered recast remains usable while W is
+    on cooldown, and W's remaining cooldown is preserved.
+  - Q hitting multiple Elite dummies reduces current R cooldown by 5 s total.
+  - Flash toward a wall or map edge: the endpoint stays on legal terrain.
+  - Put two dummies within 2.6 m, move the cursor onto empty floor, and press
+    Space: the closer dummy is attacked. Hover the farther dummy and press
+    Space again: it is selected instead, without resetting attack cooldown.
+  - Throw R directly or diagonally into a wall: it turns back and catching it
+    still opens the empowered recast. Test this while standing near a wall too.
+  - While holding Q/W/R, click new points. Preview follows the moving hero.
+    Releasing commits and stops walking only for the cast/attack.
+  - Very close movement clicks and immediate reversals stay at full speed;
+    reaching the point stops movement without drift.
+  - Let the Sentinel defeat you, or press J repeatedly after spawn guard ends.
+    Watch the 4 s countdown, checkpoint return, then 3 s SPAWN GUARD.
+    Check that any active R/F cooldown keeps counting through the revive.
+  - Move and hold Q during spawn guard: protection remains. Cancel Q: it
+    remains. Release a valid Q: protection ends at commitment, before impact.
+  - Throw R, then die before its return. The sword finishes its path without
+    reviving/healing you or granting an old recast after the respawn.
+
+Placeholder sword and swing
+  The mannequin carries a four-part placeholder sword attached to hand_r.
+  Space basic attacks play a 0.60 s swing, with damage at the existing 0.18 s
+    impact time. Q plays a heavier 0.80 s swing, with damage at 0.25 s.
+  Holding Q only shows targeting; movement remains available while aiming.
+  Accepted movement after impact blends out visual recovery. The animation
+    does not add root motion or supply weapon collision for gameplay.
+  Sword animation assets: Content/Mistworld/Animations/A_Sword_Auto.uasset
+    and A_Sword_Cleave.uasset. Authoring script: Scripts/create_placeholder_swing.py.
+  Dashes now accept legal sub-centimeter frame steps and ignore zero-time
+    updates. W/Flash still require more than 1 cm of legal travel to commit.
+
+Damage/health rules
+  Physical damage uses armor; magic uses magic resistance. Both start at 20.
+  Distinct damage reductions multiply, capped at 75%; same named effects
+    retain the strongest value and refresh duration.
+  Healing bonuses add per outgoing/incoming category (each capped at +50%);
+    strongest anti-heal applies afterward (capped at 75%). Healing clamps to
+    missing HP, uses actual damage removed, and cannot revive a dead caster.
+  Root, stun, silence, damage immunity and debuff immunity are separate timed
+    states. They are available for upcoming enemies/encounters and tests.
+
+Automated checks
+  Mistworld.Combat.Startup: actual map/controller/pawn/HUD and armor damage.
+  Mistworld.Combat.QMovement: movement during aim, retargeting, cast lock.
+  Mistworld.Combat.BaseKit: W/E/R/recast/Flash integration and Q refunds.
+  Mistworld.Combat.BasicAttackTargeting: nearest and cursor-selected enemies,
+    invalid/blocked targets, range, actual timed damage, cooldowns and cancel.
+  Mistworld.Combat.HealthRules: reduction/healing/CC/immunity calculations.
+  Mistworld.Combat.ReturningSword: swept hits, each leg, moving return, walls.
+  Mistworld.Combat.MeleePresentation: real animation Blueprint hand motion,
+    sword attachment, auto/Q timing and damage, movement recovery cancellation.
+  Mistworld.Combat.SmallDashTicks: zero-time and 0.0001 s updates for normal
+    and empowered dashes, completion, damage and healing.
+  Mistworld.Combat.EnemyAI: real nav approach, locked warning/dodge, timed
+    impact/recovery, armor/E/immunity, stun/death interruption, terrain LOS,
+    return/home reset, immediate return immunity and ranged retaliation.
+  Mistworld.Movement.ConstantSpeed: starts, reversal, close clicks, arrival.
+  Mistworld.Combat.SpawnProtection: exact duration, damage/debuff rejection,
+    self-healing, independent immunity sources, initialization and defeat events.
+  Mistworld.Combat.RespawnLifecycle: the real controller's initial spawn, defeat,
+    checkpoint revive, cooldown/input cleanup, hostile-commit protection rules,
+    mid-dash defeat and released-sword benefits across lives.
+  Mistworld.Combat.TargetingGeometry: cone/capsule boundaries, terrain-blocked
+    Q damage and preview feedback, rounded dash/sword preview caps, and
+    cancelled/invalid casts without damage or cooldown.
+  All eight checks passed across the final runs. The seven combat checks
+    passed in Saved/Logs/MeleePresentationFinalTests.log. ConstantSpeed
+    passed in Saved/Logs/MeleeConstantSpeedFinalTest.log, measuring 500 cm/s
+    on the first movement frame and the first reversal frame.
+  Build passed: Saved/Logs/MeleePresentationBuild.log.
+  Targeting/keybind/wall-return update: Live Coding succeeded in the open
+    editor; build log Saved/Logs/CombatTargetingLiveCodingBuild.log.
+    BaseKit, BasicAttackTargeting, MeleePresentation and ReturningSword all
+    passed in-editor; results Saved/Logs/CombatTargetingEditorTests.json.
+  Enemy/arena/W-speed update: full editor build passed in
+    Saved/Logs/EnemySliceFullBuild.log. BaseKit, BasicAttackTargeting and
+    SmallDashTicks passed in Saved/Logs/EnemySliceHeadlessTests.log; EnemyAI
+    passed after fixture corrections in Saved/Logs/EnemyAIFinalTests.log.
+    Combined final results: Saved/Logs/EnemySliceResults.json.
+    These checks ran with rendering disabled (NullRHI), fixed 60 Hz simulation,
+    and an isolated project-local cache. They verify gameplay; they do not
+    establish that the earlier DirectX/Slate renderer crash has been resolved.
+    The saved map was loaded from a cold process with the full native DLL.
+    Its four editor navigation routes passed in Saved/CombatArenaSetup.json.
+  Headless physics checks use -UseFixedTimeStep -FPS=60. The tiny-dash check
+    independently tests sub-centimeter updates. Movement fixtures validate
+    a flat navigable route in the template map before making their assertions.
+
+Milestone 1 implementation now includes the full combat/death/revive/reset loop.
+Milestone 1 exit checks passed: all 13 automated checks succeeded with zero
+  errors in a fresh process using the full native DLL. Final build:
+  Saved/Logs/Milestone1FinalBuild.log. Test log: Saved/Logs/Milestone1FinalTests.log.
+  Compact results: Saved/Logs/Milestone1Results.json. Full automation report:
+  Saved/Automation/Milestone1Final/index.json.
+  These checks use NullRHI and fixed 60 Hz simulation. They verify gameplay,
+  animation transforms and preview geometry; final artwork is still placeholder.
+Milestone 2 now adds Alphonse's Abyss loadout and checkpoint swapping, including
+all 16 mixed kits. See MILESTONE-2-TEST.txt for L-menu controls, mixed-kit rules
+and the new test results. Loot, persistence and networking remain later scope.
+
+Source spec: C:\Users\user\Desktop\MOBA beta\Mistworld-Implementation-Spec-v0.1.txt
+Before-change backup: C:\Users\user\Documents\Codex\2026-10-02\can-x20\work\Mistworld-before-full-base-kit

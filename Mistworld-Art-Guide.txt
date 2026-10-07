@@ -1,0 +1,316 @@
+MISTWORLD: YOUR FIRST ART ASSETS
+Bright fantasy direction: ivory stone, clear blue magic, warm gold details.
+For the current Unreal 5.8 Mistworld project. Written 4 October 2026.
+
+Start with one floor tile, one pillar, and one sword. Get those into Unreal
+before spending time on a complete dungeon or a detailed character. That small
+loop teaches scale, export, materials, and iteration with very little rework.
+
+Blender is a suitable free tool for this. Get a stable release from the official
+download page: https://www.blender.org/download/
+You do not need an asset subscription or a third-party Blender add-on for these
+exercises. Blender includes its FBX export capability.
+
+WHAT YOU ARE MAKING
+
+A static mesh is a rigid object: floor, pillar, sword blade, or sword guard.
+A skeletal mesh has a skeleton and vertex weights so it can deform: Alphonse's
+body, flexible clothing, and armor that spans several moving bones.
+
+Make Alphonse's equipment visually separable from the beginning:
+  Greatsword Blade: the replaceable blade, excluding the guard.
+  Greatsword Guard: the crossguard, grip, and pommel as one assembly initially.
+  Heavy Helmet: a removable helmet over the underlying head.
+  Heavy Chestplate: torso armor; decide which shoulder/arm pieces belong to it.
+  Heavy Boots: a matched pair; decide how far the pieces extend up the shin.
+
+His base body still needs arms, hands, legs, and clothes underneath those slots.
+Five equipment slots do not mean five pieces can replace the entire body.
+For a first character, finish one coherent outfit. Keep these parts separate in
+the Blender source even if the first game import uses a combined character.
+
+FIRST EXERCISE: A 2-METRE FLOOR TILE
+
+1. Open Blender and choose a new General file. Keep the cube; delete the camera
+   and light by selecting them in the Outliner and pressing X.
+2. In Scene Properties, find Units. Set Unit System to Metric, Unit Scale to 1,
+   and Length to Meters. Type sizes with a unit suffix if you prefer: 200cm.
+   Here 1 Blender unit represents 1 metre. Unreal gameplay uses centimetres.
+   Changing displayed units alone does not resize an existing object.
+3. Select the cube. Press N to open the Item panel. Set its Dimensions to
+   X = 2m, Y = 2m, Z = 0.2m. Keep Location at 0, 0, 0.
+4. In Object Mode press Ctrl+A, then choose Scale. Scale now reads 1, 1, 1.
+5. Press Tab for Edit Mode, A to select all vertices, then G, Z, -0.1, Enter.
+   This moves the geometry below its origin. The top surface is now at Z=0;
+   the origin at the centre of the top makes floor alignment straightforward.
+   Press Tab to return to Object Mode.
+6. Rename the object SM_Crypt_Floor_200. Keep a clean copy before detailing it.
+7. Optional: add a Bevel modifier in the wrench panel. Try an amount of 0.01m
+   and 2 segments. A small bevel catches highlights; a large bevel makes gaps.
+   Avoid displacement on the walking surface for the first version.
+8. In Edit Mode select all faces, press U, and choose Smart UV Project. Accept
+   the initial settings. This creates a simple texture layout for this prop.
+9. Save the working file as Crypt_Floor_200.blend in your own art-source folder.
+   The .blend is your editable master; an FBX is the export you send to Unreal.
+
+BLENDER TO UNREAL: FIRST STATIC-MESH EXPORT
+
+1. Select only SM_Crypt_Floor_200 in Object Mode.
+2. File > Export > FBX (.fbx). Enable Selected Objects. Include Mesh objects.
+3. Use export Scale 1. Enable Apply Unit if that option is present. Keep the
+   exporter axis defaults for this first test; do not add a separate 100x scale.
+   Export the evaluated modifiers, and disable Bake Animation for this prop.
+   Blender interface wording can differ between stable versions.
+4. Export SM_Crypt_Floor_200.fbx alongside the .blend or in an Exports folder.
+5. In Unreal's Content Drawer create Content/Mistworld/Art/Crypt, then import
+   the FBX there as a Static Mesh. Import Materials/Textures can stay off for
+   this exercise; we will make a simple Unreal material instead.
+6. Keep import scale at 1. Use scene/unit conversion when the importer offers
+   it. Double-click the mesh and check its size: about 200 x 200 x 20 cm.
+   Place it at actor scale 1, 1, 1 and compare it with the mannequin.
+   If it is 2 cm or 20,000 cm wide, correct the exporter/import-unit combination
+   and reimport. Do not compensate by scaling every actor in the map.
+7. In the Static Mesh Editor show collision. For a test walking tile, use the
+   Collision menu to add a simple box. For a purely decorative overlay over
+   the existing walkable floor, set the placed component to No Collision.
+8. Create M_CryptStone in the Content Drawer: a Material with ivory Base Color,
+   Metallic 0, Roughness about 0.8. Assign it to the tile and inspect the result.
+   These are starting art values, not gameplay rules.
+9. Test in a separate art-test level first. Change the bevel or material, export
+   over the FBX, then use Reimport on the Unreal asset. Confirm it updates.
+
+Once the tile imports correctly, save those FBX settings as your static export
+preset. Keep one known-good export for comparison when another asset is wrong.
+Epic's FBX pipeline documents FBX 2020.2; Blender's FBX exporter does not offer
+every Autodesk version choice. The measured import test matters more than
+assuming a preset is guaranteed to work in every exporter/importer version.
+
+SECOND EXERCISE: A PILLAR
+
+1. Start with a fresh cube, 0.6m x 0.6m x 3m. Apply Scale in Object Mode.
+2. In Edit Mode select all and move the geometry up 1.5m along Z. The object
+   origin remains at world zero, at the centre of the pillar's base.
+3. Give the edges a small bevel. Add a wider plinth and cap with separate cubes
+   if desired. Use Shift+D to duplicate an object; G to move; S to scale.
+4. Join the visible pieces with Ctrl+J if this pillar will always be one prop.
+   Ensure its final origin is still at the base, at world zero for export.
+5. Name it SM_Crypt_Pillar_300, unwrap, save the .blend, and export like the tile.
+6. In Unreal verify it is 300cm tall, upright, and has simple collision.
+   Put it near the edge of a test room and test click-to-move around it.
+
+YOUR FIRST MODULAR CRYPT KIT
+
+Build repeatable pieces on a 50cm placement grid. Suggested starting sizes:
+  Floor: 200 x 200 x 20cm, pivot at top centre.
+  Wall: 200cm wide, 30cm thick, 300cm high, pivot at bottom centre.
+  Pillar: 60 x 60 x 300cm, pivot at bottom centre.
+  Doorway: a 300cm-wide clear opening, assembled from two posts and a lintel.
+  Trim: one short gold/blue decorative strip you can repeat along walls.
+  Prop: one stone sarcophagus or lantern, after the core pieces fit together.
+
+Model only a small room first: four tiles, a wall, a doorway, and two pillars.
+View it through the actual top-down game camera. Enlarge important patterns
+until they read at that distance. Ivory stone can be warm and slightly worn;
+blue crystal lights and restrained gold trim can tie it to the new UI.
+
+The current prototype floor is about 44.5 x 32m. Preserve the playable layout,
+entrance, protective circle, chest access, and charge space while decorating.
+Make an art copy of Lvl_CryptSlice before replacing its graybox visuals.
+Keep MistCryptSession, MistCryptGolem, PlayerStart, and gameplay gate behavior.
+Hide/replace visual surfaces gradually rather than deleting gameplay actors.
+Avoid placing another coplanar floor on top of the old one: it will flicker.
+For an art overlay, offset it slightly and use No Collision; retain the known
+walkable collision until the replacement has been checked.
+
+Alphonse's current gameplay capsule has a 42cm radius and 96cm half-height.
+That is an 84cm-wide, 192cm-high collision body, not a target for modeling every
+piece of armor. Use generous passage widths and keep floor edges smooth.
+New visible sword/armor pieces should not change that capsule or attack ranges.
+
+For an archway, a single convex collision hull can block the opening. Use
+separate simple boxes on its two posts and lintel. More advanced custom convex
+collision exported from Blender uses matching names such as
+UCX_SM_Crypt_Doorway_00, _01, _02. Each hull must be convex and closed.
+Press P in the Unreal level viewport to inspect navigation, and play-test the
+doorway from both directions after changing collision. Art can invalidate paths.
+
+THIRD EXERCISE: ALPHONSE'S GREAT SWORD
+
+Make a simple readable weapon before detailed armor. The current placeholder
+blade is 100cm long. That is a useful starting reference, not a final art limit.
+
+1. Start an empty Blender file with the same metre/unit settings.
+2. Add a cube for the blade. Set dimensions to 1m along X, 0.035m along Y,
+   and 0.09m along Z. Apply Scale. In Edit Mode move its geometry +0.58m on X.
+   Its origin stays at the shared hand/grip point (0,0,0). Name it
+   SM_Alphonse_Blade_01.
+3. Add a cube for the crossguard: about 0.045m X, 0.24m Y, 0.055m Z. Apply
+   Scale. Move its geometry +0.08m X in Edit Mode. Give it a slight bevel.
+4. Add a small handle behind the crossguard, then a pommel. Join those pieces
+   with the crossguard. Name that assembly SM_Alphonse_Guard_01.
+5. Set the guard assembly's origin to the same world-zero grip point: with the
+   3D cursor at the world origin, Object > Set Origin > Origin to 3D Cursor.
+   Keep the objects at Location 0,0,0. Do not centre each part on its own mesh.
+6. Give blade and guard simple UVs and distinct material slots: steel and gold,
+   plus a blue accent if desired. A thick silhouette is easier to read than
+   tiny filigree at the game camera distance.
+7. Save Alphonse_Greatsword.blend. Export the blade and guard as separate FBXs,
+   selecting one object at a time so both retain the same grip-based pivot.
+8. Import them into Content/Mistworld/Art/Alphonse as Static Meshes. Verify the
+   assembled blade is about 100cm and both pieces share a compatible origin.
+   The exported axis conversion can rotate an asset. We will set and verify
+   its hand-attachment transform once, rather than resize the character.
+
+HOW THESE IMPORTS CONNECT TO THE CURRENT GAME
+
+The hero Blueprint is Content/TopDown/Blueprints/BP_TopDownCharacter.
+Its Mesh component selects the skeletal mesh and animation Blueprint. The
+project includes Manny/Quinn mannequin assets under Content/Characters/
+Mannequins, and currently uses the mannequin animation system and custom
+A_Sword_Auto / A_Sword_Cleave clips under Content/Mistworld/Animations.
+
+The current sword is built from primitive meshes by UMistMeleePresentation in
+Source/Mistworld/MistMeleePresentation.cpp. It attaches to the hand_r bone;
+the blade points along the hand's local X axis in the current mannequin.
+Importing a sword asset alone does not replace that generated weapon. Once
+your FBXs are ready, we can add/set blade and guard asset overrides, check the
+grip alignment, and carry those same visuals into the inventory preview and
+returning-sword ability. This also avoids two swords appearing at once.
+
+The weapon mesh should remain visual-only: no overlaps, no navigation effects,
+and no combat collision. Gameplay already defines the auto/Q/W/R hitboxes.
+Change a mesh's appearance without changing who an attack can hit.
+
+ALPHONSE'S BODY: A REALISTIC BEGINNER SEQUENCE
+
+An original animated hero is a larger task than a prop. Do it in these passes:
+
+1. Design pass. Draw or collect your own front/side concepts. Decide Alphonse's
+   silhouette: broad torso, heavy helmet, large sword, clear blue/gold accents.
+   Choose how chestplate includes pauldrons, and boots include greaves. Keep
+   cloth/pants/gloves in the underlying outfit so all five slots fit together.
+2. Reference pass. Open BP_TopDownCharacter, select Mesh, and use the browse
+   button beside Skeletal Mesh Asset to locate the actual current mannequin.
+   From that asset's Content Drawer context menu use Asset Actions > Export
+   to make an FBX reference. Export a copy; retain the original Unreal assets.
+   Import the reference in Blender and check its measured size before building.
+3. Silhouette pass. Build a low-detail body/armor around that reference in its
+   reference pose. Use a Mirror modifier for symmetry. Start with the helmet;
+   then torso; then boots. Leave space around elbows, knees, neck, and hands.
+   Check the top-down silhouette before adding grooves or surface scratches.
+4. Rig compatibility test. Choose the skeleton strategy below and import one
+   crude body or armor piece. Test idle, walk, auto attack, Q, and turning now.
+   Solve size, orientation, and deformation before polishing the full model.
+5. Mesh pass. Add clean edges around bending joints. A sculpt is not the final
+   game mesh by itself: a dense sculpt usually needs retopology, UVs, baking,
+   and weights. Simple polygon modeling avoids that extra pipeline initially.
+6. Skinning pass. Bind to the chosen armature and inspect weights in poses.
+   Automatic weights are a starting point; they can stretch rigid plates or
+   mix influences across adjacent pieces. Weight paint and test each joint.
+   A rigid helmet can follow the head bone. Torso pieces spanning shoulders
+   and chest need planned segmentation or skeletal weights. Test boots at
+   both ankle and knee poses rather than assuming one bone suits the whole boot.
+7. Texture pass. Unwrap the usable game mesh. Use a checker texture to spot
+   stretched UVs, then make steel, ivory, cloth, gold, and blue accents. Keep
+   material slots few and consistent across equipment; unnecessary sections
+   add rendering cost. Start with 1K/2K textures and judge them in the game.
+8. Integration pass. We will connect the approved mesh and equipment pieces to
+   the hero Blueprint and inventory preview, preserve the existing capsule,
+   and verify all movement/abilities. Only then add more outfit variants.
+
+SKELETON STRATEGY: PICK ONE BEFORE DETAILED SKINNING
+
+A. Preserve the project's mannequin skeleton. This is our first target because
+   the walking and sword animations already work. Use the exported reference
+   hierarchy/rest pose as the baseline. Do not rename, reorder, delete, or
+   reorient its bones casually. Bind the new mesh to that hierarchy and test a
+   round trip using a separate asset. Imported bone names alone do not guarantee
+   compatibility: hierarchy, reference pose, scale, and orientation also matter.
+   If your Blender FBX importer offers automatic bone orientation, leave it off
+   when testing preservation of the original hierarchy. Importer options differ
+   between the newer and legacy FBX importers.
+
+B. Make your own skeleton. If you choose very different proportions or a new
+   rig, import it with its own Skeleton asset, then use Unreal's IK Rig and IK
+   Retargeter to transfer the mannequin animations. Define source/target pelvis
+   roots and arm/leg chains, align retarget poses, preview walk and sword clips,
+   then export retargeted sequences. We must also update the animation Blueprint
+   and weapon bone/socket attachment. A successful retarget does not repair bad
+   skin weights or automatically make a sword grip accurate.
+
+For a skeletal FBX, export selected mesh plus its armature in the reference
+pose; disable Add Leaf Bones and disable animation export for a mesh-only test.
+Export the required hierarchy, not animation control widgets. Do not blindly
+enable Only Deform Bones on a mannequin-compatible export: it may remove IK
+or other non-deforming bones the existing skeleton expects. Keep the tested
+bone hierarchy, and check the imported Skeleton Tree. Avoid applying transforms
+or a new rest pose to an already skinned rig without checking the binding.
+
+Import as a Skeletal Mesh. Select the existing project Skeleton only if the
+test asset genuinely matches it. Otherwise create a new Skeleton and use the
+retarget route. Importing one FBX containing several weighted objects does not
+necessarily give separately swappable equipment assets; export/import modular
+pieces deliberately with the same shared skeleton and reference-space alignment.
+
+For a later equipment system, body + helmet/chestplate/boots can use skeletal
+components following the main mesh through Leader Pose when their hierarchies
+match. Rigid accessories can instead use bone/socket attachments. Those are
+game integration steps; a visible inventory slot does not automatically wire
+mesh swapping. We will choose the simplest route that fits your actual assets.
+
+FINISHING CHECKS FOR EVERY ASSET
+
+  Scale: correct centimetre size in Unreal at actor scale 1.
+  Pivot: tile top, wall/pillar base, sword shared grip.
+  Surface: correct outward normals, usable UVs, no unexpected black faces.
+  Materials: create/check Unreal materials; Blender procedural node graphs do
+    not arrive as an identical Unreal material. Bake textures when necessary.
+  Collision: simple stable collision for architecture; none for cosmetic gear.
+  Animation: no missing bones, twisted wrists, floating feet, or armor clipping.
+  Camera: silhouette and magic tells remain readable from the top-down view.
+  Detail: do not subdivide indefinitely. Add simplified LODs once the first
+    version works, checking silhouette, normals, and material cost at distance.
+    Avoid treating Nanite as a substitute for the skeletal/animation pipeline.
+  Source: keep .blend files and textures outside generated Unreal cache folders.
+    Preserve the working FBXs so Unreal Reimport can find them again.
+
+YOUR NEXT SMALL DELIVERABLE
+
+Make SM_Crypt_Floor_200 and import it at the correct size. Then make the pillar
+and the two-part sword. Send the .blend/FBX paths when ready; we can integrate
+them and work through the next modeling or rigging step with your actual asset.
+
+OFFICIAL REFERENCES
+
+Blender download and release guidance:
+https://www.blender.org/download/
+https://developer.blender.org/docs/handbook/release_process/lts/
+
+Blender scene units (manual; choose your installed version in the selector):
+https://docs.blender.org/manual/en/latest/scene_layout/scene/properties.html
+
+Blender UV tools / Smart UV Project:
+https://docs.blender.org/manual/en/latest/modeling/meshes/editing/uv.html
+
+Blender FBX exporter:
+https://docs.blender.org/manual/en/latest/files/import_export/fbx.html
+https://docs.blender.org/api/current/bpy.ops.export_scene.html
+
+Blender skinning / armature parenting:
+https://docs.blender.org/manual/en/latest/animation/armatures/skinning/parenting.html
+
+Epic Unreal 5.8 static FBX import, origins, collision, and LODs:
+https://dev.epicgames.com/documentation/en-us/unreal-engine/fbx-static-mesh-pipeline-in-unreal-engine
+
+Epic Unreal 5.8 skeletal FBX import:
+https://dev.epicgames.com/documentation/en-us/unreal-engine/fbx-skeletal-mesh-pipeline-in-unreal-engine
+
+Epic Unreal 5.8 biped IK retargeting:
+https://dev.epicgames.com/documentation/en-us/unreal-engine/retargeting-bipeds-with-ik-rig-in-unreal-engine
+
+Epic Unreal 5.8 modular character assembly:
+https://dev.epicgames.com/documentation/en-us/unreal-engine/working-with-modular-characters-in-unreal-engine
+
+This is a proposed production workflow tailored to the current project, not a
+promise that every Blender exporter preset or untested rig imports unchanged.
+The small measured round trip is the first acceptance test for your art setup.

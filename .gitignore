@@ -1,0 +1,49 @@
+# Unreal-generated and personal local data
+/.vs/
+/.idea/
+/Binaries/
+/Intermediate/
+/DerivedDataCache/
+/Saved/
+/Build/
+/Engine/
+*.sln
+*.slnx
+*.suo
+*.VC.db
+*.VC.opendb
+*.user
+*.opensdf
+*.sdf
+*.pidb
+*.pdb
+*.obj
+*.log
+*.tmp
+*.bak
+*.blend[0-9]
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+/Config/DefaultEditorPerProjectUserSettings.ini
+/Content/Developers/
+
+# Superseded placeholder and unused import tool
+/Content/Mistworld/Characters/Anima/
+/SourceArt/Anima/
+/Scripts/import_anima.py
+
+# Stale candidate assets and machine-specific QA reports
+/SourceArt/Golem/mirror-golelingevolved.glb
+/SourceArt/Golem/mirror-manifest.json
+/SourceArt/Alphonse/Unreal-Previews/
+/SourceArt/Alphonse/*Report*.json
+/SourceArt/AnimaAnime/rig-validation.json
+
+# External actor/object folders under Content are intentionally versioned.

@@ -1,0 +1,47 @@
+ALPHONSE MODEL AND ANIMATION CHECK
+
+Open Mistworld.uproject and press Play in the crypt or combat test map.
+Alphonse's armored blockout replaces the mannequin in both places.
+
+Controls and presentation
+- Click to move: idle and run animations follow movement.
+- Space: sword auto-attack; the blade passes forward at the damage contact.
+- Hold Q, aim, then release: the base kit uses a sweeping slash; Abyss Q uses
+  a downward quake strike. Movement remains available while only aiming.
+- W: base spinning dash or Abyss thrust dash, matching the equipped W.
+- E: base or Abyss defensive pose; legs continue running while Guard is active.
+- R: base throwing gesture or Abyss warcry, matching the equipped R.
+- F: Flash with a brief matching pose. Flash remains instant.
+- I: inventory, including the live character and equipped base sword.
+- Defeat and respawn: death pose, then a clean reset to normal locomotion.
+
+These are editable prototype animations. Combat timers determine damage,
+movement and cooldowns; the animation does not add root motion or alter speed.
+Equipping other items keeps the same base weapon appearance, as requested.
+
+Assets in Unreal
+Content/Mistworld/Characters/Alphonse/
+  SK_Alphonse_Blockout, SKEL_Alphonse_Blockout, SM_Alphonse_Greatsword
+  Animations/ contains 13 named animation sequences.
+  Materials/ contains the model's flat-color materials.
+
+Editable source
+SourceArt/Alphonse/Alphonse-Game-Rig.blend
+The original Alphonse-Armored-Blockout-V3.blend remains unchanged.
+Use a copy of the rig file when changing geometry or animations. Keep the
+bone names, in-place root, scale and grip pivot when exporting replacements.
+In Blender, select the armature and choose a named A_Alphonse action in the
+Dope Sheet's Action Editor to inspect or edit each animation.
+
+Code
+Source/Mistworld/MistAlphonseAnimInstance.cpp: idle/run/guard/death graph.
+Source/Mistworld/MistMeleePresentation.cpp: sword and ability animation timing.
+Source/Mistworld/MistworldPlayerController.cpp: authoritative combat behavior.
+
+For reimport, use Scripts/import_alphonse.py inside Unreal after a successful
+C++ build. It reads SourceArt/Alphonse/rig-manifest.json; import FBX with the
+legacy FBX importer. Reimporting the model does not require changing gameplay.
+
+If Play is paused at the first frame, press the Resume triangle beside Stop.
+A running session shows Pause bars. Play now captures mouse input automatically.
+

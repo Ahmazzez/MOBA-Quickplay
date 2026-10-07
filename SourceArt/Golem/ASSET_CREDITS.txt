@@ -1,0 +1,24 @@
+Stone golem model: Pok
+Creator: Teh_Bucket
+Source: https://opengameart.org/content/pok
+Direct source archive:
+https://opengameart.org/sites/default/files/pok_-_fbx_blend_textures_and_unity_setup.zip
+License: Creative Commons CC0 1.0 Universal (public domain dedication)
+License text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The creator identifies the model and included texture assets as CC0. Commercial
+use and modification are permitted. Attribution is optional and retained here
+as a courtesy. Seamless rock textures are by Joao Paulo via 3dtextures.me, CC0.
+Carved stone normal and occlusion maps are included with the creator's model.
+
+Mistworld preparation uses the rigged Pok4.fbx source with 9,680 triangles,
+27 bones, and 3 material slots. Original UVs and vertex skin weights are retained.
+The model is normalized to two metres, with its lowest reference point at Z=0.
+
+Four simple prototype animation clips were authored for this integration: idle,
+walk, a two-arm slam, and collapse. These are not downloaded motion-capture clips.
+Attack damage, hitboxes, and crowd control remain controlled by the game code.
+
+Native Blender facing: -Y. Unreal FBX import: convert scene and scene units,
+force front X axis, scale1.0, preserve_local_transform=False for animation.
+Normal maps use the OpenGL convention; flip their green channel for Unreal.

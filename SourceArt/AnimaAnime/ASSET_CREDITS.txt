@@ -1,0 +1,8 @@
+Anima anime placeholder
+Vita / AvatarSample_F from VRoid beta AvatarSample3 by VRoid Project (pixiv)
+CC0 1.0 as confirmed by original publisher:
+https://vroid.pixiv.help/hc/en-us/articles/360014900113
+VRM usage metadata: everyone, commercial, violent gameplay, modification, redistribution Allow.
+Motion donor: Quaternius Hooded Adventurer / Ultimate Modular Women Pack, CC0 1.0
+https://quaternius.com/packs/ultimatemodularwomen.html
+Changes: normalized 170cm, original textures with baked VRM tint, clean rig, retargeted motion, fitted closed-hand grip, cosmetic rapier and dagger.
